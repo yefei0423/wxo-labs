@@ -1,0 +1,5 @@
+[
+  "[DOC 1 — AskHR overview]\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.",
+  "[DOC 2 — Objectives]\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.",
+  "[DOC 3 — Outcomes]\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies."
+]

@@ -1,0 +1,49 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MCP Context Test",
+    "version": "1.0.0",
+    "description": "A test tool to validate WxO passing User Auth headers into a Server-Sent Events MCP connection",
+    "x-ibm-annotations": "true"
+  },
+  "servers": [
+    {
+      "url": "https://0ea9-99-239-88-232.ngrok-free.app",
+      "description": "Ngrok tunnel to Local MCP SSE Server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "paths": {
+    "/sse": {
+      "get": {
+        "operationId": "get_session_identity",
+        "summary": "Check Auth Headers",
+        "description": "Connects to the server over SSE and prints the extracted Authorization Bearer Context Token",
+        "responses": {
+          "200": {
+            "description": "SSE Handshake OK",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

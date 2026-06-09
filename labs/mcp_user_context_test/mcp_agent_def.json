@@ -1,0 +1,6 @@
+{
+  "name": "MCP Identity Tester",
+  "description": "An agent that tests extracting credentials from SSE Headers",
+  "instructions": "You are a helpful assistant. You have access to the 'get_session_identity' tool. If the user asks you to check headers, invoke it.",
+  "tools": ["get_session_identity"]
+}

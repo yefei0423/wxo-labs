@@ -1,0 +1,35 @@
+{
+  "description": "Manually clear the tool state (use if tool crashed)",
+  "created_by": "643007PPX7",
+  "tags": null,
+  "name": "clear_tool_state_v2",
+  "permission": "read_only",
+  "input_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "output_schema": {
+    "type": "string",
+    "description": "Confirmation message"
+  },
+  "binding": {
+    "python": {
+      "function": "long_running_tool:clear_tool_state",
+      "requirements": [
+        "# Python dependencies for Input Blocking Plugin Test",
+        "# Author: Markus van Kempen | mvk@ca.ibm.com",
+        "",
+        "# WXO SDK (required for tools and plugins)"
+      ]
+    }
+  },
+  "display_name": "clear_tool_state_v2",
+  "toolkit_id": null,
+  "is_async": false,
+  "response_format": "content",
+  "restrictions": "editable",
+  "bundled_agent_id": null,
+  "workspace_id": "00000000-0000-0000-0000-000000000001",
+  "hidden": false
+}

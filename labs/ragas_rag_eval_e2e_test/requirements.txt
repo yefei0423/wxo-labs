@@ -1,0 +1,14 @@
+# Author: Markus van Kempen | mvk@ca.ibm.com
+# Research | Floor 7½ 🏢🤏 — https://pages.github.ibm.com/mvankempen/homepage/
+# No bug too small, no syntax too weird.
+#
+# Watsonx Orchestrate CLI package (same as evaluations_test) for cached IAM token.
+ibm-watsonx-orchestrate
+
+requests>=2.28.0
+python-dotenv>=1.0.0
+datasets>=2.14.0
+
+# Ragas + OpenAI backend is the common default; swap per Ragas docs if needed.
+ragas>=0.1.0
+langchain-openai>=0.1.0

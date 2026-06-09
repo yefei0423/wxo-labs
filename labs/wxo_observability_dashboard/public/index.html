@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WxO Trace Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <!-- ───── Compact Top Bar ───── -->
+            <header class="topbar glass">
+                <div class="topbar-left">
+                    <h1 class="topbar-title">🔭 Trace Explorer</h1>
+                </div>
+                <div class="topbar-center">
+                    <select id="env-selector" class="select-box topbar-select">
+                        <option>Loading...</option>
+                    </select>
+                    <div class="topbar-time-group">
+                        <button class="btn btn-outline btn-sm" data-mins="15">15m</button>
+                        <button class="btn btn-outline btn-sm" data-mins="60">1h</button>
+                        <button class="btn btn-outline btn-sm" data-mins="1440">24h</button>
+                        <input type="datetime-local" id="start-time" class="select-box input-sm topbar-input" title="Start">
+                        <span class="time-sep">→</span>
+                        <input type="datetime-local" id="end-time" class="select-box input-sm topbar-input" title="End">
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <button class="btn btn-outline btn-sm" id="refresh-btn">↻ Refresh</button>
+                    <button class="btn btn-primary btn-sm" id="export-btn">Export</button>
+                    <button class="btn btn-outline btn-sm" id="manage-systems-btn">⚙</button>
+                    <span class="dot online" title="Connected to backend"></span>
+                </div>
+            </header>
+
+            <!-- ───── Search + Filter Chips (single row) ───── -->
+            <div class="filter-bar glass">
+                <div class="search-wrap">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="agent-filter" class="search-input" placeholder="Search agents, traces, keywords…">
+                    <button class="search-clear" id="search-clear-btn" title="Clear" style="display:none">✕</button>
+                </div>
+                <div class="filter-chips">
+                    <label class="filter-chip" for="conversation-only-toggle">
+                        <input type="checkbox" id="conversation-only-toggle">💬 Chats
+                    </label>
+                    <label class="filter-chip" for="tools-only-toggle">
+                        <input type="checkbox" id="tools-only-toggle">🔧 Tools
+                    </label>
+                    <label class="filter-chip" for="errors-only-toggle">
+                        <input type="checkbox" id="errors-only-toggle">⚠️ Errors
+                    </label>
+                    <label class="filter-chip" for="exclude-infra-toggle">
+                        <input type="checkbox" id="exclude-infra-toggle">🚫 Infra
+                    </label>
+                </div>
+            </div>
+
+            <!-- ───── Status bar (minimal) ───── -->
+            <section id="workspace-summary" class="workspace-summary"></section>
+
+            <!-- ───── Overview Cards ───── -->
+            <section id="overview-strip" class="overview-strip"></section>
+
+            <!-- ───── Main Content: full-width trace list ───── -->
+            <div class="dashboard-grid">
+                <div class="panel glass trace-list-panel">
+                    <div class="panel-header">
+                        <h3>Recent Traces</h3>
+                        <span class="badge" id="trace-count">0</span>
+                    </div>
+                    <div class="trace-list" id="trace-list">
+                        <!-- JS injected list items -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ───── Error Explorer (below, collapsed by default) ───── -->
+            <section id="error-explorer-panel" class="panel glass error-explorer-panel collapsed">
+                <div class="panel-header error-explorer-toggle" id="error-explorer-toggle" title="Click to expand or collapse">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <h3>Error Explorer</h3>
+                        <span class="badge" id="error-explorer-count">0</span>
+                    </div>
+                    <span class="error-explorer-chevron">▼</span>
+                </div>
+                <div id="error-explorer-content" class="error-explorer-content">
+                    <div class="empty-state" style="height:auto; min-height: 120px;">
+                        <div class="empty-icon">⚠️</div>
+                        <p>Select a time window to inspect grouped exceptions.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Inspector Modal (full-screen, opens on trace click) -->
+    <div id="inspector-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Trace Details">
+        <div class="modal glass inspector-modal-content">
+            <div class="inspector-modal-toolbar">
+                <div id="inspector-modal-title" class="inspector-modal-title">Trace Details</div>
+                <button id="inspector-modal-close" class="btn btn-outline btn-sm inspector-modal-close" title="Close (Esc)">✕ Close</button>
+            </div>
+            <div id="inspector-modal-body" class="inspector-modal-body">
+                <!-- content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal-overlay hidden">
+        <div class="modal glass">
+            <h2>Export Traces</h2>
+            <p>Gathering all raw OpenTelemetry payloads to download as JSON.</p>
+            <div class="progress-bar">
+                <div class="progress" id="export-progress"></div>
+            </div>
+            <p id="export-status-text" class="status-text">Starting export...</p>
+        </div>
+    </div>
+
+    <!-- Systems Manager Modal -->
+    <div id="systems-modal" class="modal-overlay hidden">
+        <div class="modal glass systems-modal">
+            <h2>Manage Systems</h2>
+            <p>Systems from <code>.env</code> are read-only. Locally-added systems can be edited or removed.</p>
+
+            <div class="systems-list-wrap">
+                <div id="systems-list" class="systems-list"></div>
+            </div>
+
+            <form id="system-form" class="system-form">
+                <input id="new-system-name" class="select-box glass" type="text" placeholder="System Name" required>
+                <input id="new-system-url" class="select-box glass" type="url" placeholder="https://...instance-url" required>
+                <input id="new-system-key" class="select-box glass" type="password" placeholder="API Key" required>
+                <div class="system-form-actions">
+                    <button type="submit" class="btn btn-primary">Add System</button>
+                    <button type="button" id="close-systems-btn" class="btn btn-outline">Close</button>
+                </div>
+            </form>
+
+            <form id="edit-system-form" class="system-form" style="display:none;">
+                <input type="hidden" id="edit-system-original-name">
+                <input id="edit-system-name" class="select-box glass" type="text" placeholder="System Name" required>
+                <input id="edit-system-url" class="select-box glass" type="url" placeholder="https://...instance-url" required>
+                <input id="edit-system-key" class="select-box glass" type="password" placeholder="New API Key (blank = keep current)">
+                <div class="system-form-actions">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" id="cancel-edit-system-btn" class="btn btn-outline">Cancel</button>
+                </div>
+            </form>
+
+            <p id="systems-status-text" class="status-text"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

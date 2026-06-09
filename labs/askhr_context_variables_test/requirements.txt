@@ -1,0 +1,4 @@
+mcp
+starlette
+uvicorn
+ibm-watsonx-orchestrate>=2.9.0

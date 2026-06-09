@@ -1,0 +1,42 @@
+{
+  "description": "Simulates a long-running data processing operation",
+  "created_by": "643007PPX7",
+  "tags": null,
+  "name": "long_running_toolv3",
+  "permission": "read_only",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "description": "Number of seconds to run (default: 30)",
+        "default": 30
+      }
+    },
+    "required": []
+  },
+  "output_schema": {
+    "type": "string",
+    "description": "Success message with processing statistics"
+  },
+  "binding": {
+    "python": {
+      "function": "long_running_toolv3:long_running_toolv3",
+      "requirements": [
+        "# Python dependencies for Input Blocking Plugin Test",
+        "# Author: Markus van Kempen | mvk@ca.ibm.com",
+        "",
+        "# WXO SDK (required for tools and plugins)"
+      ]
+    }
+  },
+  "display_name": "long_running_toolv3",
+  "toolkit_id": null,
+  "is_async": false,
+  "response_format": "content",
+  "restrictions": "editable",
+  "bundled_agent_id": null,
+  "workspace_id": "00000000-0000-0000-0000-000000000001",
+  "hidden": false
+}

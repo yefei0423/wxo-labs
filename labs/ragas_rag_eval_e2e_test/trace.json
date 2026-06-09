@@ -1,0 +1,1972 @@
+{
+  "traceData": {
+    "resourceSpans": [
+      {
+        "resource": {
+          "attributes": [
+            {
+              "key": "service.name",
+              "value": {
+                "stringValue": "wxo-server"
+              }
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "value": {
+                "stringValue": "python"
+              }
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "value": {
+                "stringValue": "opentelemetry"
+              }
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "value": {
+                "stringValue": "1.32.1"
+              }
+            },
+            {
+              "key": "service.version",
+              "value": {
+                "stringValue": "1.0.0"
+              }
+            },
+            {
+              "key": "deployment.environment",
+              "value": {
+                "stringValue": "development"
+              }
+            },
+            {
+              "key": "application",
+              "value": {
+                "stringValue": "wxo-server"
+              }
+            },
+            {
+              "key": "tenant.id",
+              "value": {
+                "stringValue": "20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b"
+              }
+            }
+          ]
+        },
+        "scopeSpans": [
+          {
+            "scope": {
+              "name": "jaeger-import",
+              "version": "1.0.0"
+            },
+            "spans": [
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "f621a4d18d225b49",
+                "name": "POST /chat/completions",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279390124000",
+                "endTimeUnixNano": "1777660279447267000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-server"
+                    }
+                  },
+                  {
+                    "key": "langfuse.session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "global_transaction_id",
+                    "value": {
+                      "stringValue": "8e896b99-1cc2-4698-94e0-0d86fc039bf4"
+                    }
+                  },
+                  {
+                    "key": "is.root",
+                    "value": {
+                      "stringValue": "true"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "message.id",
+                    "value": {
+                      "stringValue": "168f5beb-8fb4-47e3-a3f3-d1bc165ca5c4"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "input",
+                    "value": {
+                      "stringValue": "{\"args\": [], \"kwargs\": {}}"
+                    }
+                  },
+                  {
+                    "key": "output",
+                    "value": {
+                      "stringValue": "\"<async_generator object run_orchestrator_agent_direct.<locals>.traced_run.<locals>.context_aware_generator at 0x7f6f19bac540>\""
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "4f821d8f9c295b8f"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "d424d5765ce05d65",
+                "name": "LangGraph.workflow",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279573687000",
+                "endTimeUnixNano": "1777660285920391000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "workflow"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"inputs\": {\"current_agent\": \"ragas_rag_stub_agent\", \"current_agent_id\": \"49f6188a-f99c-401b-80b4-09f9dca84e35\", \"agent_display_name\": \"Ragas RAG stub agent\", \"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"What is AskHR, and what objectives does the documentation mention?\", \"type\": \"human\"}}], \"reflection_retry_count\": 0, \"reflection_retry_limit\": 1, \"context\": {\"wxo_thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"wxo_run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"wxo_email_id\": \"markusvankempen43@gmail.com\", \"wxo_user_name\": \"markusvankempen43@gmail.com\", \"wxo_tenant_id\": \"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\"}, \"last_reflection\": null, \"step_count\": 0, \"context_binary\": {}, \"plan\": [], \"current_task\": -1, \"task_results\": {}, \"is_planning\": false, \"is_collaborator\": false, \"guideline_prompt\": \"\", \"citations\": {}, \"plugin_continue_processing_message\": \"\", \"agent_depth\": 1, \"pending_compaction_task_id\": \"\", \"initial_preinvoke_result\": {\"plugin_continue_processing\": true, \"plugin_continue_processing_message\": \"\", \"agent_id\": \"\"}}, \"tags\": [], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\"}, \"kwargs\": {\"name\": \"LangGraph\"}}"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"**AskHR** is an AI\\u2011driven conversational assistant that gives employees a single, natural\\u2011language entry point for routine HR actions\\u2014checking leave balances, requesting time off, updating profile information, and getting answers about benefits.\\n\\n**Documentation\\u2011stated objectives**\\n\\n1. **Automate everyday HR tasks** (with approvals where required).  \\n2. **Replace multiple portals** by providing natural\\u2011language access to HR services.  \\n3. **Securely connect to HR back\\u2011ends** through OpenAPI\\u2011style connectors.  \\n4. **Leverage watsonx Orchestrate** for reasoning, routing, and reliable tool execution.  \\n\\nThese objectives aim to speed up employee support, reduce manual HR workload, and improve satisfaction while maintaining enterprise\\u2011grade security and policy control.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 161, \"prompt_tokens\": 475, \"total_tokens\": 636, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 256}, \"queue_time\": 0.073638238, \"prompt_time\": 0.384311567, \"completion_time\": 0.368112727, \"total_time\": 0.752424294}, \"model_name\": \"openai/gpt-oss-120b\", \"system_fingerprint\": \"fp_78599a67a4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": \"ragas_rag_stub_agent\", \"id\": \"run--6406edad-28f3-4f49-b8ea-13556a086fa6-0\", \"usage_metadata\": {\"input_tokens\": 475, \"output_tokens\": 161, \"total_tokens\": 636, \"input_token_details\": {\"cache_read\": 256}, \"output_token_details\": {}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}], \"plugin_continue_processing_message\": \"\", \"is_react_response\": false, \"is_collaborator\": false, \"context_binary\": {}, \"async_flag\": false, \"flowinstance_id\": null, \"correlation_id\": null, \"in_async_execution\": 0}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "f621a4d18d225b49"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "75f3472409ffd695",
+                "name": "agent.task",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279584867000",
+                "endTimeUnixNano": "1777660279933404000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "1"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:f3b03856-fe74-9ca4-f4a7-5891636e7b69"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "task"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"inputs\": \"{\\\"context\\\":{\\\"wxo_thread_id\\\":\\\"79f69d74-49c3-4771-9f2e-93ff05a829a6\\\",\\\"wxo_run_id\\\":\\\"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\\\",\\\"wxo_email_id\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_user_name\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_tenant_id\\\":\\\"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\\\"},\\\"messages\\\":[{\\\"content\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{},\\\"type\\\":\\\"human\\\",\\\"name\\\":null,\\\"id\\\":\\\"cda51f12-c958-4d71-b9c9-536fc5b5eed8\\\",\\\"example\\\":false}],\\\"current_agent\\\":\\\"ragas_rag_stub_agent\\\",\\\"current_agent_id\\\":\\\"49f6188a-f99c-401b-80b4-09f9dca84e35\\\",\\\"reflection_enabled\\\":true,\\\"reflection_retry_count\\\":0,\\\"reflection_retry_limit\\\":1,\\\"last_reflection\\\":null,\\\"step_count\\\":0,\\\"is_react_response\\\":false,\\\"is_wxa_response\\\":false,\\\"async_flag\\\":false,\\\"in_async_execution\\\":0,\\\"flowinstance_id\\\":null,\\\"target_run_id\\\":null,\\\"correlation_id\\\":null,\\\"assistants\\\":[],\\\"wxa_assistant_context\\\":{},\\\"collaborator_data\\\":{},\\\"is_collaborator\\\":false,\\\"context_binary\\\":{},\\\"plan\\\":[],\\\"current_task\\\":-1,\\\"task_results\\\":{},\\\"is_planning\\\":false,\\\"guideline_prompt\\\":\\\"\\\",\\\"pending_compaction_task_id\\\":\\\"\\\",\\\"agent_display_name\\\":\\\"Ragas RAG stub agent\\\",\\\"citations\\\":{},\\\"initial_preinvoke_result\\\":{\\\"plugin_continue_processing\\\":true,\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"agent_id\\\":\\\"\\\"},\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"from_collab_node\\\":false,\\\"a2a_info\\\":{},\\\"a2a_server_context\\\":{},\\\"a2a_classified_state\\\":null,\\\"agent_depth\\\":1}\", \"tags\": [\"graph:step:1\"], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:f3b03856-fe74-9ca4-f4a7-5891636e7b69\"}, \"kwargs\": {\"name\": \"agent\"}}"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"outputs\": {\"graph\": null, \"update\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\", \"function\": {\"arguments\": \"{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"}\", \"name\": \"ragas_retrieve_stub\"}, \"type\": \"function\"}], \"reasoning\": \"We need to call ragas_retrieve_stub with topic.\", \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 53, \"prompt_tokens\": 516, \"total_tokens\": 569, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": null, \"reasoning_tokens\": 13, \"rejected_prediction_tokens\": null}, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 256}, \"queue_time\": 0.005778973, \"prompt_time\": 0.001189487, \"completion_time\": 0.183262261, \"total_time\": 0.184451748}, \"model_name\": \"openai/gpt-oss-120b\", \"system_fingerprint\": \"fp_1d982b31b2\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": \"ragas_rag_stub_agent\", \"id\": \"run--37511c29-b76c-49ee-8a79-f48fc86bbb9e-0\", \"tool_calls\": [{\"name\": \"ragas_retrieve_stub\", \"args\": {\"topic\": \"What is AskHR and what objectives does the documentation mention?\"}, \"id\": \"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 516, \"output_tokens\": 53, \"total_tokens\": 569, \"input_token_details\": {\"cache_read\": 256}, \"output_token_details\": {\"reasoning\": 13}}, \"invalid_tool_calls\": []}}], \"context\": {\"wxo_thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"wxo_run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"wxo_email_id\": \"markusvankempen43@gmail.com\", \"wxo_user_name\": \"markusvankempen43@gmail.com\", \"wxo_tenant_id\": \"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\"}, \"step_count\": 1, \"agent_display_name\": \"Ragas RAG stub agent\", \"pending_compaction_task_id\": \"\"}, \"resume\": null, \"goto\": \"tools\"}, \"kwargs\": {\"tags\": [\"graph:step:1\"]}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "d424d5765ce05d65"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "12d11bf59f47b582",
+                "name": "WatsonxChatModel.chat",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279626031000",
+                "endTimeUnixNano": "1777660279909744000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "1"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:f3b03856-fe74-9ca4-f4a7-5891636e7b69"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:f3b03856-fe74-9ca4-f4a7-5891636e7b69"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.agent_name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.is_collaborator",
+                    "value": {
+                      "stringValue": "false"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.post_plugin_flag",
+                    "value": {
+                      "stringValue": "false"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_provider",
+                    "value": {
+                      "stringValue": "openai"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_model_name",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_model_type",
+                    "value": {
+                      "stringValue": "chat"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.path",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.system",
+                    "value": {
+                      "stringValue": "Langchain"
+                    }
+                  },
+                  {
+                    "key": "llm.request.type",
+                    "value": {
+                      "stringValue": "chat"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.request.model",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.0.role",
+                    "value": {
+                      "stringValue": "system"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.0.content",
+                    "value": {
+                      "stringValue": "You answer questions about the AskHR HR assistant use case.\nBefore answering, always call the tool `ragas_retrieve_stub` once with the user's\nfull question as the `topic` argument.\nThen write a concise, accurate answer using only facts supported by the tool output.\n"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.1.role",
+                    "value": {
+                      "stringValue": "user"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.1.content",
+                    "value": {
+                      "stringValue": "What is AskHR, and what objectives does the documentation mention?"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.response.model",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.finish_reason",
+                    "value": {
+                      "stringValue": "tool_calls"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.role",
+                    "value": {
+                      "stringValue": "assistant"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.tool_calls.0.id",
+                    "value": {
+                      "stringValue": "fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.tool_calls.0.name",
+                    "value": {
+                      "stringValue": "ragas_retrieve_stub"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.tool_calls.0.arguments",
+                    "value": {
+                      "stringValue": "{\"topic\": \"What is AskHR and what objectives does the documentation mention?\"}"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.prompt_tokens",
+                    "value": {
+                      "stringValue": "516"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.completion_tokens",
+                    "value": {
+                      "stringValue": "53"
+                    }
+                  },
+                  {
+                    "key": "llm.usage.total_tokens",
+                    "value": {
+                      "stringValue": "569"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.cache_read_input_tokens",
+                    "value": {
+                      "stringValue": "256"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "client"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "75f3472409ffd695"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "b0aa588db6e40eb8",
+                "name": "tools.task",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279953132000",
+                "endTimeUnixNano": "1777660284893029000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "2"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "tools"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:tools\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"tools\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "tools:f5aea745-6fd1-4acb-1950-638a07bf89e4"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "task"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "tools"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"inputs\": \"{\\\"context\\\":{\\\"wxo_thread_id\\\":\\\"79f69d74-49c3-4771-9f2e-93ff05a829a6\\\",\\\"wxo_run_id\\\":\\\"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\\\",\\\"wxo_email_id\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_user_name\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_tenant_id\\\":\\\"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\\\"},\\\"messages\\\":[{\\\"content\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{},\\\"type\\\":\\\"human\\\",\\\"name\\\":null,\\\"id\\\":\\\"cda51f12-c958-4d71-b9c9-536fc5b5eed8\\\",\\\"example\\\":false},{\\\"content\\\":\\\"\\\",\\\"additional_kwargs\\\":{\\\"tool_calls\\\":[{\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"function\\\":{\\\"arguments\\\":\\\"{\\\\\\\"topic\\\\\\\":\\\\\\\"What is AskHR and what objectives does the documentation mention?\\\\\\\"}\\\",\\\"name\\\":\\\"ragas_retrieve_stub\\\"},\\\"type\\\":\\\"function\\\"}],\\\"reasoning\\\":\\\"We need to call ragas_retrieve_stub with topic.\\\",\\\"refusal\\\":null},\\\"response_metadata\\\":{\\\"token_usage\\\":{\\\"completion_tokens\\\":53,\\\"prompt_tokens\\\":516,\\\"total_tokens\\\":569,\\\"completion_tokens_details\\\":{\\\"accepted_prediction_tokens\\\":null,\\\"audio_tokens\\\":null,\\\"reasoning_tokens\\\":13,\\\"rejected_prediction_tokens\\\":null},\\\"prompt_tokens_details\\\":{\\\"audio_tokens\\\":null,\\\"cached_tokens\\\":256},\\\"queue_time\\\":0.005778973,\\\"prompt_time\\\":0.001189487,\\\"completion_time\\\":0.183262261,\\\"total_time\\\":0.184451748},\\\"model_name\\\":\\\"openai/gpt-oss-120b\\\",\\\"system_fingerprint\\\":\\\"fp_1d982b31b2\\\",\\\"finish_reason\\\":\\\"tool_calls\\\",\\\"logprobs\\\":null},\\\"type\\\":\\\"ai\\\",\\\"name\\\":\\\"ragas_rag_stub_agent\\\",\\\"id\\\":\\\"run--37511c29-b76c-49ee-8a79-f48fc86bbb9e-0\\\",\\\"example\\\":false,\\\"tool_calls\\\":[{\\\"name\\\":\\\"ragas_retrieve_stub\\\",\\\"args\\\":{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"},\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"type\\\":\\\"tool_call\\\"}],\\\"invalid_tool_calls\\\":[],\\\"usage_metadata\\\":{\\\"input_tokens\\\":516,\\\"output_tokens\\\":53,\\\"total_tokens\\\":569,\\\"input_token_details\\\":{\\\"cache_read\\\":256},\\\"output_token_details\\\":{\\\"reasoning\\\":13}}}],\\\"current_agent\\\":\\\"ragas_rag_stub_agent\\\",\\\"current_agent_id\\\":\\\"49f6188a-f99c-401b-80b4-09f9dca84e35\\\",\\\"reflection_enabled\\\":true,\\\"reflection_retry_count\\\":0,\\\"reflection_retry_limit\\\":1,\\\"last_reflection\\\":null,\\\"step_count\\\":1,\\\"is_react_response\\\":false,\\\"is_wxa_response\\\":false,\\\"async_flag\\\":false,\\\"in_async_execution\\\":0,\\\"flowinstance_id\\\":null,\\\"target_run_id\\\":null,\\\"correlation_id\\\":null,\\\"assistants\\\":[],\\\"wxa_assistant_context\\\":{},\\\"collaborator_data\\\":{},\\\"is_collaborator\\\":false,\\\"context_binary\\\":{},\\\"plan\\\":[],\\\"current_task\\\":-1,\\\"task_results\\\":{},\\\"is_planning\\\":false,\\\"guideline_prompt\\\":\\\"\\\",\\\"pending_compaction_task_id\\\":\\\"\\\",\\\"agent_display_name\\\":\\\"Ragas RAG stub agent\\\",\\\"citations\\\":{},\\\"initial_preinvoke_result\\\":{\\\"plugin_continue_processing\\\":true,\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"agent_id\\\":\\\"\\\"},\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"from_collab_node\\\":false,\\\"a2a_info\\\":{},\\\"a2a_server_context\\\":{},\\\"a2a_classified_state\\\":null,\\\"agent_depth\\\":1}\", \"tags\": [\"graph:step:2\"], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:f5aea745-6fd1-4acb-1950-638a07bf89e4\"}, \"kwargs\": {\"name\": \"tools\", \"available_tools\": \"[{\\\"type\\\": \\\"function\\\", \\\"function\\\": {\\\"name\\\": \\\"ragas_retrieve_stub\\\", \\\"description\\\": \\\"Retrieve internal HR assistant reference passages for the given topic or question.\\\\n\\\\nUse this tool whenever the user asks about AskHR, HR automation, leave policies,\\\\nbenefits, or watsonx Orchestrate HR use cases. Pass their question as `topic`.\\\", \\\"parameters\\\": {\\\"type\\\": \\\"object\\\", \\\"properties\\\": {\\\"topic\\\": {\\\"description\\\": \\\"User question or keywords (e.g. \\\\\\\"AskHR\\\\\\\", \\\\\\\"leave balance\\\\\\\", \\\\\\\"benefits\\\\\\\").\\\", \\\"type\\\": \\\"string\\\"}}, \\\"required\\\": []}}}]\"}}"
+                    }
+                  },
+                  {
+                    "key": "tool.id",
+                    "value": {
+                      "stringValue": "c1b1ac28-1440-4718-935b-d556be0bd4dd"
+                    }
+                  },
+                  {
+                    "key": "tool.name",
+                    "value": {
+                      "stringValue": "ragas_retrieve_stub"
+                    }
+                  },
+                  {
+                    "key": "tool.args",
+                    "value": {
+                      "stringValue": "{'topic': 'What is AskHR and what objectives does the documentation mention?'}"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"outputs\": {\"graph\": null, \"update\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"[DOC 1 \\u2014 AskHR overview]\\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.\\n\\n[DOC 2 \\u2014 Objectives]\\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.\\n\\n[DOC 3 \\u2014 Outcomes]\\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies.\", \"response_metadata\": {\"tool_call_args\": {\"topic\": \"What is AskHR and what objectives does the documentation mention?\"}}, \"type\": \"tool\", \"name\": \"ragas_retrieve_stub\", \"tool_call_id\": \"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\", \"status\": \"success\"}}], \"current_agent\": \"ragas_rag_stub_agent\", \"current_agent_id\": \"49f6188a-f99c-401b-80b4-09f9dca84e35\", \"context\": {\"wxo_thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"wxo_run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"wxo_email_id\": \"markusvankempen43@gmail.com\", \"wxo_user_name\": \"markusvankempen43@gmail.com\", \"wxo_tenant_id\": \"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\", \"memory_prefetch_done\": true, \"memory_prefetch_user_text\": \"What is AskHR, and what objectives does the documentation mention?\", \"file_args\": [], \"wxo_file_args\": []}, \"context_binary\": {}, \"step_count\": 1}, \"resume\": null, \"goto\": \"agent\"}, \"kwargs\": {\"tags\": [\"graph:step:2\"]}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "d424d5765ce05d65"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "e47a905e271a0b3e",
+                "name": "ragas_retrieve_stub.tool",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660279976054000",
+                "endTimeUnixNano": "1777660284886879000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "2"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "tools"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:tools\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"tools\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "tools:f5aea745-6fd1-4acb-1950-638a07bf89e4"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.checkpoint_ns",
+                    "value": {
+                      "stringValue": "tools:f5aea745-6fd1-4acb-1950-638a07bf89e4"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.path",
+                    "value": {
+                      "stringValue": "tools"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "tool"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "ragas_retrieve_stub"
+                    }
+                  },
+                  {
+                    "key": "tool.type",
+                    "value": {
+                      "stringValue": "tool"
+                    }
+                  },
+                  {
+                    "key": "tool.subtype",
+                    "value": {
+                      "stringValue": "python"
+                    }
+                  },
+                  {
+                    "key": "tool.id",
+                    "value": {
+                      "stringValue": "c1b1ac28-1440-4718-935b-d556be0bd4dd"
+                    }
+                  },
+                  {
+                    "key": "tool.name",
+                    "value": {
+                      "stringValue": "ragas_retrieve_stub"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.runnable.code_id",
+                    "value": {
+                      "stringValue": "create_tool.py:169:wo_archer.backend.tools.python.create_tool:_create_python_tool.<locals>.dynamic_python_tool_func"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.runnable.input_schema",
+                    "value": {
+                      "stringValue": "{\"kwargs\": {\"annotation\": null, \"default\": null, \"kind\": \"VAR_KEYWORD\"}}"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.runnable.output_schema",
+                    "value": {
+                      "stringValue": "typing.Dict[str, typing.Any]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"input_str\": \"{'topic': 'What is AskHR and what objectives does the documentation mention?'}\", \"tags\": [\"seq:step:1\"], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:f5aea745-6fd1-4acb-1950-638a07bf89e4\", \"checkpoint_ns\": \"tools:f5aea745-6fd1-4acb-1950-638a07bf89e4\"}, \"inputs\": {\"topic\": \"What is AskHR and what objectives does the documentation mention?\"}, \"kwargs\": {\"color\": \"green\", \"name\": null}}"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"output\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"[DOC 1 \\u2014 AskHR overview]\\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.\\n\\n[DOC 2 \\u2014 Objectives]\\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.\\n\\n[DOC 3 \\u2014 Outcomes]\\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies.\", \"type\": \"tool\", \"name\": \"ragas_retrieve_stub\", \"tool_call_id\": \"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\", \"status\": \"success\"}}, \"kwargs\": {\"tags\": [\"seq:step:1\"], \"color\": \"green\", \"name\": \"ragas_retrieve_stub\"}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "b0aa588db6e40eb8"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "1e707a3ba7d3900e",
+                "name": "agent.task",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660284914916000",
+                "endTimeUnixNano": "1777660285848398000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "3"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:1178849c-f71e-fc58-3319-54c8593917f8"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "task"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"inputs\": \"{\\\"context\\\":{\\\"wxo_thread_id\\\":\\\"79f69d74-49c3-4771-9f2e-93ff05a829a6\\\",\\\"wxo_run_id\\\":\\\"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\\\",\\\"wxo_email_id\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_user_name\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_tenant_id\\\":\\\"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\\\",\\\"memory_prefetch_done\\\":true,\\\"memory_prefetch_user_text\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"file_args\\\":[],\\\"wxo_file_args\\\":[]},\\\"messages\\\":[{\\\"content\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{},\\\"type\\\":\\\"human\\\",\\\"name\\\":null,\\\"id\\\":\\\"cda51f12-c958-4d71-b9c9-536fc5b5eed8\\\",\\\"example\\\":false},{\\\"content\\\":\\\"\\\",\\\"additional_kwargs\\\":{\\\"tool_calls\\\":[{\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"function\\\":{\\\"arguments\\\":\\\"{\\\\\\\"topic\\\\\\\":\\\\\\\"What is AskHR and what objectives does the documentation mention?\\\\\\\"}\\\",\\\"name\\\":\\\"ragas_retrieve_stub\\\"},\\\"type\\\":\\\"function\\\"}],\\\"reasoning\\\":\\\"We need to call ragas_retrieve_stub with topic.\\\",\\\"refusal\\\":null},\\\"response_metadata\\\":{\\\"token_usage\\\":{\\\"completion_tokens\\\":53,\\\"prompt_tokens\\\":516,\\\"total_tokens\\\":569,\\\"completion_tokens_details\\\":{\\\"accepted_prediction_tokens\\\":null,\\\"audio_tokens\\\":null,\\\"reasoning_tokens\\\":13,\\\"rejected_prediction_tokens\\\":null},\\\"prompt_tokens_details\\\":{\\\"audio_tokens\\\":null,\\\"cached_tokens\\\":256},\\\"queue_time\\\":0.005778973,\\\"prompt_time\\\":0.001189487,\\\"completion_time\\\":0.183262261,\\\"total_time\\\":0.184451748},\\\"model_name\\\":\\\"openai/gpt-oss-120b\\\",\\\"system_fingerprint\\\":\\\"fp_1d982b31b2\\\",\\\"finish_reason\\\":\\\"tool_calls\\\",\\\"logprobs\\\":null},\\\"type\\\":\\\"ai\\\",\\\"name\\\":\\\"ragas_rag_stub_agent\\\",\\\"id\\\":\\\"run--37511c29-b76c-49ee-8a79-f48fc86bbb9e-0\\\",\\\"example\\\":false,\\\"tool_calls\\\":[{\\\"name\\\":\\\"ragas_retrieve_stub\\\",\\\"args\\\":{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"},\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"type\\\":\\\"tool_call\\\"}],\\\"invalid_tool_calls\\\":[],\\\"usage_metadata\\\":{\\\"input_tokens\\\":516,\\\"output_tokens\\\":53,\\\"total_tokens\\\":569,\\\"input_token_details\\\":{\\\"cache_read\\\":256},\\\"output_token_details\\\":{\\\"reasoning\\\":13}}},{\\\"content\\\":\\\"[DOC 1 \\u2014 AskHR overview]\\\\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.\\\\n\\\\n[DOC 2 \\u2014 Objectives]\\\\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.\\\\n\\\\n[DOC 3 \\u2014 Outcomes]\\\\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies.\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{\\\"tool_call_args\\\":{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"}},\\\"type\\\":\\\"tool\\\",\\\"name\\\":\\\"ragas_retrieve_stub\\\",\\\"id\\\":\\\"2bb46514-cad2-4ce1-9b5c-657f18c2c95d\\\",\\\"tool_call_id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"artifact\\\":null,\\\"status\\\":\\\"success\\\"}],\\\"current_agent\\\":\\\"ragas_rag_stub_agent\\\",\\\"current_agent_id\\\":\\\"49f6188a-f99c-401b-80b4-09f9dca84e35\\\",\\\"reflection_enabled\\\":true,\\\"reflection_retry_count\\\":0,\\\"reflection_retry_limit\\\":1,\\\"last_reflection\\\":null,\\\"step_count\\\":1,\\\"is_react_response\\\":false,\\\"is_wxa_response\\\":false,\\\"async_flag\\\":false,\\\"in_async_execution\\\":0,\\\"flowinstance_id\\\":null,\\\"target_run_id\\\":null,\\\"correlation_id\\\":null,\\\"assistants\\\":[],\\\"wxa_assistant_context\\\":{},\\\"collaborator_data\\\":{},\\\"is_collaborator\\\":false,\\\"context_binary\\\":{},\\\"plan\\\":[],\\\"current_task\\\":-1,\\\"task_results\\\":{},\\\"is_planning\\\":false,\\\"guideline_prompt\\\":\\\"\\\",\\\"pending_compaction_task_id\\\":\\\"\\\",\\\"agent_display_name\\\":\\\"Ragas RAG stub agent\\\",\\\"citations\\\":{},\\\"initial_preinvoke_result\\\":{\\\"plugin_continue_processing\\\":true,\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"agent_id\\\":\\\"\\\"},\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"from_collab_node\\\":false,\\\"a2a_info\\\":{},\\\"a2a_server_context\\\":{},\\\"a2a_classified_state\\\":null,\\\"agent_depth\\\":1}\", \"tags\": [\"graph:step:3\"], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"langgraph_step\": 3, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1178849c-f71e-fc58-3319-54c8593917f8\"}, \"kwargs\": {\"name\": \"agent\"}}"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"outputs\": {\"graph\": null, \"update\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"**AskHR** is an AI\\u2011driven conversational assistant that gives employees a single, natural\\u2011language entry point for routine HR actions\\u2014checking leave balances, requesting time off, updating profile information, and getting answers about benefits.\\n\\n**Documentation\\u2011stated objectives**\\n\\n1. **Automate everyday HR tasks** (with approvals where required).  \\n2. **Replace multiple portals** by providing natural\\u2011language access to HR services.  \\n3. **Securely connect to HR back\\u2011ends** through OpenAPI\\u2011style connectors.  \\n4. **Leverage watsonx Orchestrate** for reasoning, routing, and reliable tool execution.  \\n\\nThese objectives aim to speed up employee support, reduce manual HR workload, and improve satisfaction while maintaining enterprise\\u2011grade security and policy control.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 161, \"prompt_tokens\": 475, \"total_tokens\": 636, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 256}, \"queue_time\": 0.073638238, \"prompt_time\": 0.384311567, \"completion_time\": 0.368112727, \"total_time\": 0.752424294}, \"model_name\": \"openai/gpt-oss-120b\", \"system_fingerprint\": \"fp_78599a67a4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": \"ragas_rag_stub_agent\", \"id\": \"run--6406edad-28f3-4f49-b8ea-13556a086fa6-0\", \"usage_metadata\": {\"input_tokens\": 475, \"output_tokens\": 161, \"total_tokens\": 636, \"input_token_details\": {\"cache_read\": 256}, \"output_token_details\": {}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}], \"context\": {\"wxo_thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"wxo_run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"wxo_email_id\": \"markusvankempen43@gmail.com\", \"wxo_user_name\": \"markusvankempen43@gmail.com\", \"wxo_tenant_id\": \"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\", \"memory_prefetch_done\": true, \"memory_prefetch_user_text\": \"What is AskHR, and what objectives does the documentation mention?\", \"file_args\": [], \"wxo_file_args\": []}, \"pending_compaction_task_id\": \"\"}, \"resume\": null, \"goto\": \"answer\"}, \"kwargs\": {\"tags\": [\"graph:step:3\"]}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "d424d5765ce05d65"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "1deb84d4bee2a283",
+                "name": "WatsonxChatModel.chat",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660284939076000",
+                "endTimeUnixNano": "1777660285826463000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "3"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"agent\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:1178849c-f71e-fc58-3319-54c8593917f8"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.checkpoint_ns",
+                    "value": {
+                      "stringValue": "agent:1178849c-f71e-fc58-3319-54c8593917f8"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.agent_name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.is_collaborator",
+                    "value": {
+                      "stringValue": "false"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.post_plugin_flag",
+                    "value": {
+                      "stringValue": "false"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_provider",
+                    "value": {
+                      "stringValue": "openai"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_model_name",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.ls_model_type",
+                    "value": {
+                      "stringValue": "chat"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.path",
+                    "value": {
+                      "stringValue": "agent"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.system",
+                    "value": {
+                      "stringValue": "Langchain"
+                    }
+                  },
+                  {
+                    "key": "llm.request.type",
+                    "value": {
+                      "stringValue": "chat"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.request.model",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.0.role",
+                    "value": {
+                      "stringValue": "system"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.0.content",
+                    "value": {
+                      "stringValue": "You answer questions about the AskHR HR assistant use case.\nBefore answering, always call the tool `ragas_retrieve_stub` once with the user's\nfull question as the `topic` argument.\nThen write a concise, accurate answer using only facts supported by the tool output.\n"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.1.role",
+                    "value": {
+                      "stringValue": "user"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.1.content",
+                    "value": {
+                      "stringValue": "What is AskHR, and what objectives does the documentation mention?"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.2.role",
+                    "value": {
+                      "stringValue": "assistant"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.2.tool_calls.0.id",
+                    "value": {
+                      "stringValue": "fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.2.tool_calls.0.name",
+                    "value": {
+                      "stringValue": "ragas_retrieve_stub"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.2.tool_calls.0.arguments",
+                    "value": {
+                      "stringValue": "{\"topic\": \"What is AskHR and what objectives does the documentation mention?\"}"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.3.role",
+                    "value": {
+                      "stringValue": "tool"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt.3.content",
+                    "value": {
+                      "stringValue": "[DOC 1 \u2014 AskHR overview]\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.\n\n[DOC 2 \u2014 Objectives]\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.\n\n[DOC 3 \u2014 Outcomes]\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies."
+                    }
+                  },
+                  {
+                    "key": "gen_ai.response.model",
+                    "value": {
+                      "stringValue": "openai/gpt-oss-120b"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.content",
+                    "value": {
+                      "stringValue": "**AskHR** is an AI\u2011driven conversational assistant that gives employees a single, natural\u2011language entry point for routine HR actions\u2014checking leave balances, requesting time off, updating profile information, and getting answers about benefits.\n\n**Documentation\u2011stated objectives**\n\n1. **Automate everyday HR tasks** (with approvals where required).  \n2. **Replace multiple portals** by providing natural\u2011language access to HR services.  \n3. **Securely connect to HR back\u2011ends** through OpenAPI\u2011style connectors.  \n4. **Leverage watsonx Orchestrate** for reasoning, routing, and reliable tool execution.  \n\nThese objectives aim to speed up employee support, reduce manual HR workload, and improve satisfaction while maintaining enterprise\u2011grade security and policy control."
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion.0.role",
+                    "value": {
+                      "stringValue": "assistant"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.prompt_tokens",
+                    "value": {
+                      "stringValue": "475"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.completion_tokens",
+                    "value": {
+                      "stringValue": "161"
+                    }
+                  },
+                  {
+                    "key": "llm.usage.total_tokens",
+                    "value": {
+                      "stringValue": "636"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.cache_read_input_tokens",
+                    "value": {
+                      "stringValue": "256"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "client"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "1e707a3ba7d3900e"
+              },
+              {
+                "traceId": "b12bd94d38a420b438a7ccbc579ab049",
+                "spanId": "09a44f4b285956a9",
+                "name": "answer.task",
+                "kind": "SPAN_KIND_INTERNAL",
+                "startTimeUnixNano": "1777660285851057000",
+                "endTimeUnixNano": "1777660285853801000",
+                "attributes": [
+                  {
+                    "key": "otel.scope.name",
+                    "value": {
+                      "stringValue": "wxo-langgraph-ibm-telemetry"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.run_id",
+                    "value": {
+                      "stringValue": "1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.thread_id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_step",
+                    "value": {
+                      "stringValue": "4"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_node",
+                    "value": {
+                      "stringValue": "answer"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_triggers",
+                    "value": {
+                      "stringValue": "[\"branch:to:answer\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_path",
+                    "value": {
+                      "stringValue": "[\"__pregel_pull\",\"answer\"]"
+                    }
+                  },
+                  {
+                    "key": "traceloop.association.properties.langgraph_checkpoint_ns",
+                    "value": {
+                      "stringValue": "answer:9abb66d6-deb0-f00d-8264-fa8d50e7243e"
+                    }
+                  },
+                  {
+                    "key": "framework",
+                    "value": {
+                      "stringValue": "WXOrchestrate"
+                    }
+                  },
+                  {
+                    "key": "instance.id",
+                    "value": {
+                      "stringValue": "20260409-1024-0348-7060-8d6f7218f705"
+                    }
+                  },
+                  {
+                    "key": "tenant.id",
+                    "value": {
+                      "stringValue": "20260409-1024-1886-70e4-25304afe4a1b"
+                    }
+                  },
+                  {
+                    "key": "workspace.id",
+                    "value": {
+                      "stringValue": "00000000-0000-0000-0000-000000000001"
+                    }
+                  },
+                  {
+                    "key": "user.id",
+                    "value": {
+                      "stringValue": "643007PPX7"
+                    }
+                  },
+                  {
+                    "key": "session.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6_1777660279_1b7410c6-fe4c-4ec4-b4d5-ef332062e798"
+                    }
+                  },
+                  {
+                    "key": "environment.id",
+                    "value": {
+                      "stringValue": "None"
+                    }
+                  },
+                  {
+                    "key": "environment.name",
+                    "value": {
+                      "stringValue": "draft"
+                    }
+                  },
+                  {
+                    "key": "thread.id",
+                    "value": {
+                      "stringValue": "79f69d74-49c3-4771-9f2e-93ff05a829a6"
+                    }
+                  },
+                  {
+                    "key": "agent.id",
+                    "value": {
+                      "stringValue": "49f6188a-f99c-401b-80b4-09f9dca84e35"
+                    }
+                  },
+                  {
+                    "key": "agent.name",
+                    "value": {
+                      "stringValue": "ragas_rag_stub_agent"
+                    }
+                  },
+                  {
+                    "key": "agent.display_name",
+                    "value": {
+                      "stringValue": "Ragas RAG stub agent"
+                    }
+                  },
+                  {
+                    "key": "conversation.id",
+                    "value": {
+                      "stringValue": "27026634-bcd7-486d-8860-f34b063c17a0"
+                    }
+                  },
+                  {
+                    "key": "traceloop.workflow.name",
+                    "value": {
+                      "stringValue": "LangGraph"
+                    }
+                  },
+                  {
+                    "key": "traceloop.span.kind",
+                    "value": {
+                      "stringValue": "task"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.name",
+                    "value": {
+                      "stringValue": "answer"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.input",
+                    "value": {
+                      "stringValue": "{\"inputs\": \"{\\\"context\\\":{\\\"wxo_thread_id\\\":\\\"79f69d74-49c3-4771-9f2e-93ff05a829a6\\\",\\\"wxo_run_id\\\":\\\"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\\\",\\\"wxo_email_id\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_user_name\\\":\\\"markusvankempen43@gmail.com\\\",\\\"wxo_tenant_id\\\":\\\"20260409-1024-0348-7060-8d6f7218f705_20260409-1024-1886-70e4-25304afe4a1b\\\",\\\"memory_prefetch_done\\\":true,\\\"memory_prefetch_user_text\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"file_args\\\":[],\\\"wxo_file_args\\\":[]},\\\"messages\\\":[{\\\"content\\\":\\\"What is AskHR, and what objectives does the documentation mention?\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{},\\\"type\\\":\\\"human\\\",\\\"name\\\":null,\\\"id\\\":\\\"cda51f12-c958-4d71-b9c9-536fc5b5eed8\\\",\\\"example\\\":false},{\\\"content\\\":\\\"\\\",\\\"additional_kwargs\\\":{\\\"tool_calls\\\":[{\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"function\\\":{\\\"arguments\\\":\\\"{\\\\\\\"topic\\\\\\\":\\\\\\\"What is AskHR and what objectives does the documentation mention?\\\\\\\"}\\\",\\\"name\\\":\\\"ragas_retrieve_stub\\\"},\\\"type\\\":\\\"function\\\"}],\\\"reasoning\\\":\\\"We need to call ragas_retrieve_stub with topic.\\\",\\\"refusal\\\":null},\\\"response_metadata\\\":{\\\"token_usage\\\":{\\\"completion_tokens\\\":53,\\\"prompt_tokens\\\":516,\\\"total_tokens\\\":569,\\\"completion_tokens_details\\\":{\\\"accepted_prediction_tokens\\\":null,\\\"audio_tokens\\\":null,\\\"reasoning_tokens\\\":13,\\\"rejected_prediction_tokens\\\":null},\\\"prompt_tokens_details\\\":{\\\"audio_tokens\\\":null,\\\"cached_tokens\\\":256},\\\"queue_time\\\":0.005778973,\\\"prompt_time\\\":0.001189487,\\\"completion_time\\\":0.183262261,\\\"total_time\\\":0.184451748},\\\"model_name\\\":\\\"openai/gpt-oss-120b\\\",\\\"system_fingerprint\\\":\\\"fp_1d982b31b2\\\",\\\"finish_reason\\\":\\\"tool_calls\\\",\\\"logprobs\\\":null},\\\"type\\\":\\\"ai\\\",\\\"name\\\":\\\"ragas_rag_stub_agent\\\",\\\"id\\\":\\\"run--37511c29-b76c-49ee-8a79-f48fc86bbb9e-0\\\",\\\"example\\\":false,\\\"tool_calls\\\":[{\\\"name\\\":\\\"ragas_retrieve_stub\\\",\\\"args\\\":{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"},\\\"id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"type\\\":\\\"tool_call\\\"}],\\\"invalid_tool_calls\\\":[],\\\"usage_metadata\\\":{\\\"input_tokens\\\":516,\\\"output_tokens\\\":53,\\\"total_tokens\\\":569,\\\"input_token_details\\\":{\\\"cache_read\\\":256},\\\"output_token_details\\\":{\\\"reasoning\\\":13}}},{\\\"content\\\":\\\"[DOC 1 \\u2014 AskHR overview]\\\\nAskHR is an AI assistant use case for employees: one conversational entry point for routine HR tasks such as checking leave balances, requesting time off, updating profile fields, and answering benefits questions.\\\\n\\\\n[DOC 2 \\u2014 Objectives]\\\\nObjectives: (1) Automate everyday HR tasks with approvals where needed; (2) Provide natural-language access instead of many portals; (3) Connect securely to HR systems via OpenAPI-style connectors; (4) Use watsonx Orchestrate for reasoning, routing, and reliable tool execution.\\\\n\\\\n[DOC 3 \\u2014 Outcomes]\\\\nExpected outcomes: faster employee support, less manual HR handling, and higher satisfaction while keeping access controlled by enterprise identity and policies.\\\",\\\"additional_kwargs\\\":{},\\\"response_metadata\\\":{\\\"tool_call_args\\\":{\\\"topic\\\":\\\"What is AskHR and what objectives does the documentation mention?\\\"}},\\\"type\\\":\\\"tool\\\",\\\"name\\\":\\\"ragas_retrieve_stub\\\",\\\"id\\\":\\\"2bb46514-cad2-4ce1-9b5c-657f18c2c95d\\\",\\\"tool_call_id\\\":\\\"fc_a883cd62-8fc4-4e0a-8474-53eb59d4576f\\\",\\\"artifact\\\":null,\\\"status\\\":\\\"success\\\"},{\\\"content\\\":\\\"**AskHR** is an AI\\u2011driven conversational assistant that gives employees a single, natural\\u2011language entry point for routine HR actions\\u2014checking leave balances, requesting time off, updating profile information, and getting answers about benefits.\\\\n\\\\n**Documentation\\u2011stated objectives**\\\\n\\\\n1. **Automate everyday HR tasks** (with approvals where required).  \\\\n2. **Replace multiple portals** by providing natural\\u2011language access to HR services.  \\\\n3. **Securely connect to HR back\\u2011ends** through OpenAPI\\u2011style connectors.  \\\\n4. **Leverage watsonx Orchestrate** for reasoning, routing, and reliable tool execution.  \\\\n\\\\nThese objectives aim to speed up employee support, reduce manual HR workload, and improve satisfaction while maintaining enterprise\\u2011grade security and policy control.\\\",\\\"additional_kwargs\\\":{\\\"refusal\\\":null},\\\"response_metadata\\\":{\\\"token_usage\\\":{\\\"completion_tokens\\\":161,\\\"prompt_tokens\\\":475,\\\"total_tokens\\\":636,\\\"completion_tokens_details\\\":null,\\\"prompt_tokens_details\\\":{\\\"audio_tokens\\\":null,\\\"cached_tokens\\\":256},\\\"queue_time\\\":0.073638238,\\\"prompt_time\\\":0.384311567,\\\"completion_time\\\":0.368112727,\\\"total_time\\\":0.752424294},\\\"model_name\\\":\\\"openai/gpt-oss-120b\\\",\\\"system_fingerprint\\\":\\\"fp_78599a67a4\\\",\\\"finish_reason\\\":\\\"stop\\\",\\\"logprobs\\\":null},\\\"type\\\":\\\"ai\\\",\\\"name\\\":\\\"ragas_rag_stub_agent\\\",\\\"id\\\":\\\"run--6406edad-28f3-4f49-b8ea-13556a086fa6-0\\\",\\\"example\\\":false,\\\"tool_calls\\\":[],\\\"invalid_tool_calls\\\":[],\\\"usage_metadata\\\":{\\\"input_tokens\\\":475,\\\"output_tokens\\\":161,\\\"total_tokens\\\":636,\\\"input_token_details\\\":{\\\"cache_read\\\":256},\\\"output_token_details\\\":{}}}],\\\"current_agent\\\":\\\"ragas_rag_stub_agent\\\",\\\"current_agent_id\\\":\\\"49f6188a-f99c-401b-80b4-09f9dca84e35\\\",\\\"reflection_enabled\\\":true,\\\"reflection_retry_count\\\":0,\\\"reflection_retry_limit\\\":1,\\\"last_reflection\\\":null,\\\"step_count\\\":1,\\\"is_react_response\\\":false,\\\"is_wxa_response\\\":false,\\\"async_flag\\\":false,\\\"in_async_execution\\\":0,\\\"flowinstance_id\\\":null,\\\"target_run_id\\\":null,\\\"correlation_id\\\":null,\\\"assistants\\\":[],\\\"wxa_assistant_context\\\":{},\\\"collaborator_data\\\":{},\\\"is_collaborator\\\":false,\\\"context_binary\\\":{},\\\"plan\\\":[],\\\"current_task\\\":-1,\\\"task_results\\\":{},\\\"is_planning\\\":false,\\\"guideline_prompt\\\":\\\"\\\",\\\"pending_compaction_task_id\\\":\\\"\\\",\\\"agent_display_name\\\":\\\"Ragas RAG stub agent\\\",\\\"citations\\\":{},\\\"initial_preinvoke_result\\\":{\\\"plugin_continue_processing\\\":true,\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"agent_id\\\":\\\"\\\"},\\\"plugin_continue_processing_message\\\":\\\"\\\",\\\"from_collab_node\\\":false,\\\"a2a_info\\\":{},\\\"a2a_server_context\\\":{},\\\"a2a_classified_state\\\":null,\\\"agent_depth\\\":1}\", \"tags\": [\"graph:step:4\"], \"metadata\": {\"run_id\": \"1b7410c6-fe4c-4ec4-b4d5-ef332062e798\", \"thread_id\": \"79f69d74-49c3-4771-9f2e-93ff05a829a6\", \"langgraph_step\": 4, \"langgraph_node\": \"answer\", \"langgraph_triggers\": [\"branch:to:answer\"], \"langgraph_path\": [\"__pregel_pull\", \"answer\"], \"langgraph_checkpoint_ns\": \"answer:9abb66d6-deb0-f00d-8264-fa8d50e7243e\"}, \"kwargs\": {\"name\": \"answer\", \"available_tools\": \"[{\\\"type\\\": \\\"function\\\", \\\"function\\\": {\\\"name\\\": \\\"ragas_retrieve_stub\\\", \\\"description\\\": \\\"Retrieve internal HR assistant reference passages for the given topic or question.\\\\n\\\\nUse this tool whenever the user asks about AskHR, HR automation, leave policies,\\\\nbenefits, or watsonx Orchestrate HR use cases. Pass their question as `topic`.\\\", \\\"parameters\\\": {\\\"type\\\": \\\"object\\\", \\\"properties\\\": {\\\"topic\\\": {\\\"description\\\": \\\"User question or keywords (e.g. \\\\\\\"AskHR\\\\\\\", \\\\\\\"leave balance\\\\\\\", \\\\\\\"benefits\\\\\\\").\\\", \\\"type\\\": \\\"string\\\"}}, \\\"required\\\": []}}}]\"}}"
+                    }
+                  },
+                  {
+                    "key": "traceloop.entity.output",
+                    "value": {
+                      "stringValue": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"**AskHR** is an AI\\u2011driven conversational assistant that gives employees a single, natural\\u2011language entry point for routine HR actions\\u2014checking leave balances, requesting time off, updating profile information, and getting answers about benefits.\\n\\n**Documentation\\u2011stated objectives**\\n\\n1. **Automate everyday HR tasks** (with approvals where required).  \\n2. **Replace multiple portals** by providing natural\\u2011language access to HR services.  \\n3. **Securely connect to HR back\\u2011ends** through OpenAPI\\u2011style connectors.  \\n4. **Leverage watsonx Orchestrate** for reasoning, routing, and reliable tool execution.  \\n\\nThese objectives aim to speed up employee support, reduce manual HR workload, and improve satisfaction while maintaining enterprise\\u2011grade security and policy control.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 161, \"prompt_tokens\": 475, \"total_tokens\": 636, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 256}, \"queue_time\": 0.073638238, \"prompt_time\": 0.384311567, \"completion_time\": 0.368112727, \"total_time\": 0.752424294}, \"model_name\": \"openai/gpt-oss-120b\", \"system_fingerprint\": \"fp_78599a67a4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": \"ragas_rag_stub_agent\", \"id\": \"run--6406edad-28f3-4f49-b8ea-13556a086fa6-0\", \"usage_metadata\": {\"input_tokens\": 475, \"output_tokens\": 161, \"total_tokens\": 636, \"input_token_details\": {\"cache_read\": 256}, \"output_token_details\": {}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}], \"plugin_continue_processing_message\": \"\", \"is_react_response\": false, \"is_collaborator\": false, \"context_binary\": {}, \"async_flag\": false, \"flowinstance_id\": null, \"correlation_id\": null, \"in_async_execution\": 0}, \"kwargs\": {\"tags\": [\"graph:step:4\"]}}"
+                    }
+                  },
+                  {
+                    "key": "span.kind",
+                    "value": {
+                      "stringValue": "internal"
+                    }
+                  },
+                  {
+                    "key": "internal.span.format",
+                    "value": {
+                      "stringValue": "otlp"
+                    }
+                  }
+                ],
+                "events": [],
+                "status": {
+                  "code": "STATUS_CODE_OK"
+                },
+                "parentSpanId": "d424d5765ce05d65"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "total_count": null,
+  "exported_at": "2026-05-01T18:32:46.301139Z",
+  "format": "traceData"
+}

@@ -1,0 +1,55 @@
+# GitHub Pages Configuration for WXO Labs Tutorial
+
+title: WXO Labs & Tutorial Guide
+description: Comprehensive hands-on learning path for IBM Watsonx Orchestrate - From Zero to Hero
+author: Markus van Kempen
+email: mvk@ca.ibm.com
+
+# Theme (using default GitHub Pages theme)
+theme: jekyll-theme-minimal
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO
+lang: en
+twitter:
+  username: IBMResearch
+  card: summary_large_image
+
+# Social
+social:
+  name: Markus van Kempen
+  links:
+    - https://github.com/markusvankempen
+    - https://markusvankempen.github.io/
+    - https://github.com/markusvankempen/wxo-labs
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: G-XXXXXXXXXX
+
+# Site settings
+url: "https://markusvankempen.github.io"
+baseurl: "/wxo-labs"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      author: Markus van Kempen
+
+# Made by MvK

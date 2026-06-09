@@ -1,0 +1,26 @@
+spec_version: v1
+kind: native
+name: conversation_logger_agent
+title: Conversation Logger Agent
+nickname: logger_agent
+description: |
+  Agent that logs all interactions to a private SQLite database.
+
+  **Author:** Markus van Kempen | mvk@ca.ibm.com  
+  [Research | Floor 7½ 🏢🤏](https://pages.github.ibm.com/mvankempen/homepage/)  
+  *No bug too small, no syntax too weird.*
+
+plugins:
+  agent_pre_invoke:
+    - plugin_name: logging_pre_plugin
+  agent_post_invoke:
+    - plugin_name: logging_plugin
+
+tools:
+  - say_hello
+
+instructions: |
+  You are a logging test assistant. 
+  When the user says hello, respond with: "I have logged your request securely."
+  Do not use any tools unless explicitly asked.
+

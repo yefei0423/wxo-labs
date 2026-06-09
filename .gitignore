@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.template
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+*.log
+validation_results_*.txt
+_legacy_unused/
+backup_*/

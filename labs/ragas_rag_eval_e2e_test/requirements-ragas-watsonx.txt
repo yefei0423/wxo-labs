@@ -1,0 +1,9 @@
+# Author: Markus van Kempen | mvk@ca.ibm.com
+# Research | Floor 7½ 🏢🤏 — https://pages.github.ibm.com/mvankempen/homepage/
+# No bug too small, no syntax too weird.
+#
+# Optional: Ragas judge LLM + embeddings on watsonx.ai (Granite + Slate).
+# pip install -r requirements-ragas-watsonx.txt
+#
+langchain-ibm>=0.3.0
+ibm-watsonx-ai>=1.1.0

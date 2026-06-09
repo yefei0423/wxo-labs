@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WXO Labs & Tutorial Guide | Floor 7½</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="WXO Labs & Tutorial Guide - 12 progressive labs for IBM Watsonx Orchestrate. Learn AI agent development from beginner to expert with hands-on exercises.">
+    <meta name="keywords" content="IBM, Watsonx Orchestrate, WXO, AI Agents, Tutorial, Python, Enterprise AI, Markus van Kempen, Machine Learning, RAG, Security, SSO, RBAC">
+    <meta name="author" content="Markus van Kempen">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WXO Labs & Tutorial Guide | Floor 7½">
+    <meta property="og:description" content="Comprehensive tutorial series for IBM Watsonx Orchestrate - 12 progressive labs from beginner to expert">
+    <meta property="og:url" content="https://pages.github.ibm.com/mvankempen/homepage/wxo-lab-docs/index-dark-theme.html">
+    
+    <!-- IBM Specific -->
+    <meta name="ibm:owner" content="mvk@ca.ibm.com">
+    <meta name="ibm:department" content="IBM Research">
+    <meta name="ibm:content-type" content="tutorial">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .lab-card {
+            transition: all 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .difficulty-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-4 hover:opacity-80 transition">
+                <img src="../images/logo.png" alt="Floor 7½ Logo"
+                    class="w-14 h-14 rounded-xl shadow-lg shadow-indigo-500/20" />
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg tracking-tight text-white leading-none">Floor 7½</span>
+                    <span class="text-sm text-indigo-400 font-medium tracking-tight mt-1">WXO Labs</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="../index.html" class="hover:text-indigo-400 transition">← Back to Reception</a>
+                <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts" target="_blank" class="hover:text-indigo-400 transition">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-16 px-6 max-w-6xl mx-auto">
+
+        <!-- Hero Section -->
+        <section class="mb-16">
+            <div class="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700">
+                <div class="mb-8 inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    <span>IBM Watsonx Orchestrate</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter leading-tight">
+                    WXO Labs & Tutorial Guide<br />
+                    <span class="gradient-text">From Zero to Hero</span>
+                </h1>
+
+                <p class="text-xl text-slate-400 mb-8 max-w-3xl">
+                    Master IBM Watsonx Orchestrate through 12 progressive hands-on labs.
+                    Build production-ready AI agents with security, monitoring, and enterprise integration.
+                </p>
+
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="text-center p-4 rounded-2xl bg-slate-800/50 border border-slate-700">
+                        <div class="text-4xl font-extrabold gradient-text">14</div>
+                        <div class="text-xs text-slate-500 uppercase tracking-widest mt-2">Labs</div>
+                    </div>
+                    <div class="text-center p-4 rounded-2xl bg-slate-800/50 border border-slate-700">
+                        <div class="text-4xl font-extrabold gradient-text">4</div>
+                        <div class="text-xs text-slate-500 uppercase tracking-widest mt-2">Levels</div>
+                    </div>
+                    <div class="text-center p-4 rounded-2xl bg-slate-800/50 border border-slate-700">
+                        <div class="text-4xl font-extrabold gradient-text">30+</div>
+                        <div class="text-xs text-slate-500 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#easy" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-indigo-600/30">
+                        Start Learning
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl transition-all border border-slate-700">
+                        <i class="fab fa-github mr-2"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Path -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-4">Your Learning Journey</h2>
+            <p class="text-slate-500 mb-8">Progressive labs designed to take you from beginner to expert</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-green-500/20 hover:border-green-500/40 transition-all">
+                    <div class="text-3xl mb-3">🟢</div>
+                    <h3 class="font-bold text-lg mb-2">Foundation</h3>
+                    <p class="text-sm text-slate-500">Labs 1-3: Core concepts, tool creation, basic patterns</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-yellow-500/20 hover:border-yellow-500/40 transition-all">
+                    <div class="text-3xl mb-3">🟡</div>
+                    <h3 class="font-bold text-lg mb-2">Integration</h3>
+                    <p class="text-sm text-slate-500">Labs 4-8: Context, async, files, MCP integration</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-red-500/20 hover:border-red-500/40 transition-all">
+                    <div class="text-3xl mb-3">🔴</div>
+                    <h3 class="font-bold text-lg mb-2">Security & Scale</h3>
+                    <p class="text-sm text-slate-500">Labs 9-11: RBAC, SSO, deployment automation</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900 border border-purple-500/20 hover:border-purple-500/40 transition-all">
+                    <div class="text-3xl mb-3">🏆</div>
+                    <h3 class="font-bold text-lg mb-2">Production</h3>
+                    <p class="text-sm text-slate-500">Labs 12-14: Monitoring, logging, evaluation pipelines</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Easy Labs -->
+        <section id="easy" class="mb-16">
+            <div class="mb-8">
+                <span class="difficulty-badge inline-block px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 mb-4">
+                    🟢 Easy
+                </span>
+                <h2 class="text-3xl font-bold">Beginner Labs</h2>
+                <p class="text-slate-500 mt-2">Build your foundation with core WXO concepts</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 1</span>
+                        <span class="text-xs text-slate-500">⏱️ 30 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hello World - Your First WXO Tool</h3>
+                    <p class="text-sm text-slate-500 mb-4">Learn the fundamentals of WXO tool creation. Build a simple greeting service and understand the basic architecture.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Python</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">CLI</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Agents</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-1-hello-world---your-first-wxo-tool" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 2</span>
+                        <span class="text-xs text-slate-500">⏱️ 45 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Input Defaults & UI Patterns</h3>
+                    <p class="text-sm text-slate-500 mb-4">Master Pydantic models and field validation. Create tools with smart defaults that improve user experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Pydantic</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Validation</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">UX</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-2-input-defaults--ui-patterns" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 3</span>
+                        <span class="text-xs text-slate-500">⏱️ 60 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">File Upload & Processing</h3>
+                    <p class="text-sm text-slate-500 mb-4">Handle file uploads and process Excel data with pandas. Build tools that analyze and transform uploaded files.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Files</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Pandas</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Data</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-3-file-upload--processing" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intermediate Labs -->
+        <section id="intermediate" class="mb-16">
+            <div class="mb-8">
+                <span class="difficulty-badge inline-block px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 mb-4">
+                    🟡 Intermediate
+                </span>
+                <h2 class="text-3xl font-bold">Intermediate Labs</h2>
+                <p class="text-slate-500 mt-2">Master advanced patterns and integrations</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 4</span>
+                        <span class="text-xs text-slate-500">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Context Injection & Variables</h3>
+                    <p class="text-sm text-slate-500 mb-4">Learn to manage state across tool calls. Build agents that remember user information and context.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Context</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">State</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">AgentRun</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-4-context-injection--variables" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 5</span>
+                        <span class="text-xs text-slate-500">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Async Tools & Long-Running Jobs</h3>
+                    <p class="text-sm text-slate-500 mb-4">Implement background jobs and polling patterns. Build non-blocking tools for long-running operations.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Async</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Threading</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Polling</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-5-async-tools--long-running-jobs" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 6</span>
+                        <span class="text-xs text-slate-500">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">File Downloads & Streaming</h3>
+                    <p class="text-sm text-slate-500 mb-4">Generate PDFs and provide download links. Handle binary data and implement streaming patterns.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">PDF</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Downloads</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Streaming</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-6-file-downloads--streaming" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 7 ⭐ NEW</span>
+                        <span class="text-xs text-slate-500">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">MCP Basics - Your First MCP Server</h3>
+                    <p class="text-sm text-slate-500 mb-4">Learn Model Context Protocol fundamentals. Create STDIO MCP servers and deploy with --package-root.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">MCP</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">STDIO</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Sidecar</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-7-mcp-basics---your-first-mcp-server" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 8 ⭐ NEW</span>
+                        <span class="text-xs text-slate-500">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">MCP Advanced - User Context & Credentials</h3>
+                    <p class="text-sm text-slate-500 mb-4">Master Bearer token injection, JWT decoding, and secure credential passing for external systems.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">JWT</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">SSE</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">OAuth</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-8-mcp-advanced---user-context--credentials" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Labs -->
+        <section id="advanced" class="mb-16">
+            <div class="mb-8">
+                <span class="difficulty-badge inline-block px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 mb-4">
+                    🔴 Advanced
+                </span>
+                <h2 class="text-3xl font-bold">Advanced Labs</h2>
+                <p class="text-slate-500 mt-2">Enterprise security and deployment patterns</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 13</span>
+                        <span class="text-xs text-slate-500">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">RBAC Plugin</h3>
+                    <p class="text-sm text-slate-500 mb-4">Implement security plugins and authorization logic. Restrict agent access based on user roles.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Security</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">RBAC</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Plugins</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-7-rbac-plugin---role-based-access-control" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 14</span>
+                        <span class="text-xs text-slate-500">⏱️ 180 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">SSO Integration</h3>
+                    <p class="text-sm text-slate-500 mb-4">Configure enterprise SSO with SAML. Propagate user identity from Entra ID to your tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">SSO</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">SAML</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Entra ID</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-8-sso-integration-with-microsoft-entra-id" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 13</span>
+                        <span class="text-xs text-slate-500">⏱️ 150 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Agent Export/Import & CI/CD</h3>
+                    <p class="text-sm text-slate-500 mb-4">Automate agent deployment across environments. Build CI/CD pipelines for production releases.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">DevOps</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">CI/CD</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Automation</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-9-agent-exportimport--cicd" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Labs -->
+        <section id="expert" class="mb-16">
+            <div class="mb-8">
+                <span class="difficulty-badge inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-4">
+                    🏆 Expert
+                </span>
+                <h2 class="text-3xl font-bold">Expert Labs</h2>
+                <p class="text-slate-500 mt-2">Production-grade systems and monitoring</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 14</span>
+                        <span class="text-xs text-slate-500">⏱️ 240 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conversation Logging & Audit Vault</h3>
+                    <p class="text-sm text-slate-500 mb-4">Build a tamper-proof audit system. Implement server-side logging with real-time dashboards.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Audit</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Compliance</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Dashboard</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-10-conversation-logging--audit-vault" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 13</span>
+                        <span class="text-xs text-slate-500">⏱️ 240 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Observability Dashboard</h3>
+                    <p class="text-sm text-slate-500 mb-4">Monitor agent health and performance. Track token usage, errors, and system metrics.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Monitoring</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Metrics</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Observability</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-11-observability-dashboard" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lab-card p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Lab 14</span>
+                        <span class="text-xs text-slate-500">⏱️ 300 min</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">RAG Evaluation Pipeline</h3>
+                    <p class="text-sm text-slate-500 mb-4">Evaluate RAG quality with automated metrics. Build testing pipelines for production AI systems.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">RAG</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Evaluation</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-400">Testing</span>
+                    </div>
+                    <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts/blob/main/WXO_LABS_TUTORIAL_GUIDE_v2.md#lab-12-rag-evaluation-pipeline" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
+                        Start Lab <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8">Additional Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://developer.watson-orchestrate.ibm.com/" target="_blank" class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-all group">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-4xl">📚</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-1 group-hover:text-indigo-400 transition">Documentation</h3>
+                            <p class="text-sm text-slate-500">Official WXO developer documentation and API references</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-slate-700 group-hover:text-indigo-400 transition"></i>
+                    </div>
+                </a>
+
+                <a href="https://github.ibm.com/mvankempen/wxo-testing-scripts" target="_blank" class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-all group">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-4xl">💻</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-1 group-hover:text-indigo-400 transition">GitHub Repository</h3>
+                            <p class="text-sm text-slate-500">Access all test scripts, examples, and source code</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-slate-700 group-hover:text-indigo-400 transition"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 py-8 px-6 bg-slate-950">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-500 text-sm mb-2">
+                <strong>Author:</strong> Markus van Kempen |
+                <a href="mailto:mvk@ca.ibm.com" class="text-indigo-400 hover:text-indigo-300">mvk@ca.ibm.com</a>
+            </p>
+            <p class="text-slate-600 text-xs italic mb-4">"No bug too small, no syntax too weird."</p>
+            <div class="mb-4">
+                <img src="https://hits.sh/pages.github.ibm.com/mvankempen/homepage/wxo-lab-docs.svg?label=tutorial%20visitors&color=4f46e5&labelColor=1e293b&style=flat-square"
+                     alt="Tutorial Visitors"
+                     class="inline-block opacity-60 hover:opacity-100 transition-opacity" />
+            </div>
+            <p class="text-slate-700 text-xs">© 2026 IBM Research | Floor 7½ 🏢🤏</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+# We patch the OpenAPI file locally to use Basic Auth for the CLI tests 
+# to bypass the UI browser redirect required for OAuth2 since the CLI doesn't support interactive redirects.

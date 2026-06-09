@@ -1,0 +1,6 @@
+kind: python
+name: blocking_pluginv3
+description: Pre-invoke plugin for input blocking
+connections: []
+package_root: blocking_pluginv3
+spec_version: v1

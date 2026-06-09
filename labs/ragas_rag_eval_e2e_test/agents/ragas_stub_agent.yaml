@@ -1,0 +1,18 @@
+# Author: Markus van Kempen | mvk@ca.ibm.com  
+# Research | Floor 7½ 🏢🤏 — https://pages.github.ibm.com/mvankempen/homepage/  
+# No bug too small, no syntax too weird.
+kind: native
+spec_version: v1
+name: ragas_rag_stub_agent
+display_name: Ragas RAG stub agent
+description: >
+  Test agent that calls ragas_retrieve_stub so thread step_history contains
+  retrievable passages for Ragas context_precision / context_recall experiments.
+instructions: |
+  You answer questions about the AskHR HR assistant use case.
+  Before answering, always call the tool `ragas_retrieve_stub` once with the user's
+  full question as the `topic` argument.
+  Then write a concise, accurate answer using only facts supported by the tool output.
+llm: groq/openai/gpt-oss-120b
+tools:
+  - ragas_retrieve_stub

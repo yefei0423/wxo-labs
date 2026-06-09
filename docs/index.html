@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WXO Labs & Tutorial Guide | From Zero to Hero</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo">🎓</span>
+                <span class="brand-text">WXO Labs</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#easy" class="nav-link">Easy</a>
+                <a href="#intermediate" class="nav-link">Intermediate</a>
+                <a href="#advanced" class="nav-link">Advanced</a>
+                <a href="#expert" class="nav-link">Expert</a>
+                <a href="#resources" class="nav-link">Resources</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🚀</span>
+                <span>IBM Watsonx Orchestrate</span>
+            </div>
+            <h1 class="hero-title">
+                WXO Labs & Tutorial Guide
+                <span class="gradient-text">From Zero to Hero</span>
+            </h1>
+            <p class="hero-subtitle">
+                Master IBM Watsonx Orchestrate through 14 progressive hands-on labs.
+                Build production-ready AI agents with MCP, security, monitoring, and enterprise integration.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Labs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Levels</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Hours</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#easy" class="btn btn-primary">Start Learning</a>
+                <a href="https://github.com/markusvankempen/wxo-labs" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <span>View on GitHub</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-icon">🔧</div>
+                <div class="card-text">Python Tools</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-icon">🤖</div>
+                <div class="card-text">AI Agents</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-icon">🔐</div>
+                <div class="card-text">Security</div>
+            </div>
+            <div class="floating-card card-4">
+                <div class="card-icon">📊</div>
+                <div class="card-text">Monitoring</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <h2 class="section-title">Your Learning Journey</h2>
+            <p class="section-subtitle">Progressive labs designed to take you from beginner to expert</p>
+            
+            <div class="path-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker green"></div>
+                    <div class="timeline-content">
+                        <h3>🟢 Foundation</h3>
+                        <p>Labs 1-3: Core concepts, tool creation, basic patterns</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker yellow"></div>
+                    <div class="timeline-content">
+                        <h3>🟡 Integration</h3>
+                        <p>Labs 4-8: Context, async jobs, files, MCP basics &amp; advanced</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker red"></div>
+                    <div class="timeline-content">
+                        <h3>🔴 Security & Scale</h3>
+                        <p>Labs 9-11: RBAC, SSO, deployment automation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker purple"></div>
+                    <div class="timeline-content">
+                        <h3>🏆 Production</h3>
+                        <p>Labs 12-14: Monitoring, logging, evaluation pipelines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easy Labs -->
+    <section id="easy" class="labs-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="difficulty-badge green">🟢 Easy</span>
+                <h2 class="section-title">Beginner Labs</h2>
+                <p class="section-subtitle">Build your foundation with core WXO concepts</p>
+            </div>
+
+            <div class="labs-grid">
+                <div class="lab-card" data-lab="1">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 1</span>
+                        <span class="lab-duration">⏱️ 30 min</span>
+                    </div>
+                    <h3 class="lab-title">Hello World - Your First WXO Tool</h3>
+                    <p class="lab-description">
+                        Learn the fundamentals of WXO tool creation. Build a simple greeting service and understand the basic architecture.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">CLI</span>
+                        <span class="tag">Agents</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-1-hello-world---your-first-wxo-tool" class="lab-link">Start Lab →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="2">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 2</span>
+                        <span class="lab-duration">⏱️ 45 min</span>
+                    </div>
+                    <h3 class="lab-title">Input Defaults & UI Patterns</h3>
+                    <p class="lab-description">
+                        Master Pydantic models and field validation. Create tools with smart defaults that improve user experience.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Pydantic</span>
+                        <span class="tag">Validation</span>
+                        <span class="tag">UX</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-2-input-defaults--ui-patterns" class="lab-link">Start Lab →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="3">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 3</span>
+                        <span class="lab-duration">⏱️ 60 min</span>
+                    </div>
+                    <h3 class="lab-title">File Upload & Processing</h3>
+                    <p class="lab-description">
+                        Handle file uploads and process Excel data with pandas. Build tools that analyze and transform uploaded files.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Files</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Data</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-3-file-upload--processing" class="lab-link">Start Lab →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intermediate Labs -->
+    <section id="intermediate" class="labs-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="difficulty-badge yellow">🟡 Intermediate</span>
+                <h2 class="section-title">Intermediate Labs</h2>
+                <p class="section-subtitle">Master advanced patterns and integrations</p>
+            </div>
+
+            <div class="labs-grid">
+                <div class="lab-card" data-lab="4">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 4</span>
+                        <span class="lab-duration">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="lab-title">Context Injection & Variables</h3>
+                    <p class="lab-description">
+                        Learn to manage state across tool calls. Build agents that remember user information and context.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Context</span>
+                        <span class="tag">State</span>
+                        <span class="tag">AgentRun</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-4-context-injection--variables" class="lab-link">Start Lab →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="5">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 5</span>
+                        <span class="lab-duration">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="lab-title">Async Tools & Long-Running Jobs</h3>
+                    <p class="lab-description">
+                        Implement background jobs and polling patterns. Build non-blocking tools for long-running operations.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Async</span>
+                        <span class="tag">Threading</span>
+                        <span class="tag">Polling</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-5-async-tools--long-running-jobs" class="lab-link">Start Lab →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="6">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 6</span>
+                        <span class="lab-duration">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="lab-title">File Downloads & Streaming</h3>
+                    <p class="lab-description">
+                        Generate PDFs and provide download links. Handle binary data and implement streaming patterns.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">PDF</span>
+                        <span class="tag">Downloads</span>
+                        <span class="tag">Streaming</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-6-file-downloads--streaming" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/download_file_and_stream_e2e_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="7">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 7</span>
+                        <span class="lab-duration">⏱️ 90 min</span>
+                    </div>
+                    <h3 class="lab-title">MCP Basics — Your First MCP Server</h3>
+                    <p class="lab-description">
+                        Deploy an MCP toolkit to WXO with STDIO transport. Debug discovery issues and understand the <code>--package-root</code> pattern.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">MCP</span>
+                        <span class="tag">STDIO</span>
+                        <span class="tag">Toolkits</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-7-mcp-basics---your-first-mcp-server" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/mcp_discovery_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="8">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 8</span>
+                        <span class="lab-duration">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="lab-title">MCP Advanced — User Context &amp; Credentials</h3>
+                    <p class="lab-description">
+                        Bearer token identity propagation, SSE deployments, and key-value connections injected as environment variables.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">MCP</span>
+                        <span class="tag">SSE</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-8-mcp-advanced---user-context--credentials" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/mcp_user_context_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Labs -->
+    <section id="advanced" class="labs-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="difficulty-badge red">🔴 Advanced</span>
+                <h2 class="section-title">Advanced Labs</h2>
+                <p class="section-subtitle">Enterprise security and deployment patterns</p>
+            </div>
+
+            <div class="labs-grid">
+                <div class="lab-card" data-lab="9">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 9</span>
+                        <span class="lab-duration">⏱️ 120 min</span>
+                    </div>
+                    <h3 class="lab-title">RBAC Plugin - Role-Based Access Control</h3>
+                    <p class="lab-description">
+                        Implement security plugins and authorization logic. Restrict agent access based on user roles.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">RBAC</span>
+                        <span class="tag">Plugins</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-9-rbac-plugin---role-based-access-control" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/rbac_plugin" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="10">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 10</span>
+                        <span class="lab-duration">⏱️ 180 min</span>
+                    </div>
+                    <h3 class="lab-title">SSO Integration with Microsoft Entra ID</h3>
+                    <p class="lab-description">
+                        Configure enterprise SSO with SAML. Propagate user identity from Entra ID to your tools.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">SSO</span>
+                        <span class="tag">SAML</span>
+                        <span class="tag">Entra ID</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-10-sso-integration-with-microsoft-entra-id" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/sso_entra_id_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="11">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 11</span>
+                        <span class="lab-duration">⏱️ 150 min</span>
+                    </div>
+                    <h3 class="lab-title">Agent Export/Import & CI/CD</h3>
+                    <p class="lab-description">
+                        Automate agent deployment across environments. Build CI/CD pipelines for production releases.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">DevOps</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-11-agent-exportimport--cicd" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/agent_import_e2e_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Labs -->
+    <section id="expert" class="labs-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="difficulty-badge purple">🏆 Expert</span>
+                <h2 class="section-title">Expert Labs</h2>
+                <p class="section-subtitle">Production-grade systems and monitoring</p>
+            </div>
+
+            <div class="labs-grid">
+                <div class="lab-card" data-lab="12">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 12</span>
+                        <span class="lab-duration">⏱️ 240 min</span>
+                    </div>
+                    <h3 class="lab-title">Conversation Logging & Audit Vault</h3>
+                    <p class="lab-description">
+                        Build a tamper-proof audit system. Implement server-side logging with real-time dashboards.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Audit</span>
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Dashboard</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-12-conversation-logging--audit-vault" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/conversation_logging_plugin" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="13">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 13</span>
+                        <span class="lab-duration">⏱️ 240 min</span>
+                    </div>
+                    <h3 class="lab-title">Observability Dashboard</h3>
+                    <p class="lab-description">
+                        Monitor agent health and performance. Track token usage, errors, and system metrics.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Monitoring</span>
+                        <span class="tag">Metrics</span>
+                        <span class="tag">Observability</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-13-observability-dashboard" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/wxo_observability_dashboard" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+
+                <div class="lab-card" data-lab="14">
+                    <div class="lab-header">
+                        <span class="lab-number">Lab 14</span>
+                        <span class="lab-duration">⏱️ 300 min</span>
+                    </div>
+                    <h3 class="lab-title">RAG Evaluation Pipeline</h3>
+                    <p class="lab-description">
+                        Evaluate RAG quality with automated metrics. Build testing pipelines for production AI systems.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">RAG</span>
+                        <span class="tag">Evaluation</span>
+                        <span class="tag">Testing</span>
+                    </div>
+                    <div class="lab-footer">
+                        <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#lab-14-rag-evaluation-pipeline" class="lab-link">Start Lab →</a>
+                        <a href="https://github.com/markusvankempen/wxo-labs/tree/main/labs/ragas_rag_eval_e2e_test" class="lab-link lab-link--code">Source →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Additional Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Documentation</h3>
+                    <p>Official WXO developer documentation and API references</p>
+                    <a href="https://developer.watson-orchestrate.ibm.com/" class="resource-link">View Docs →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">💻</div>
+                    <h3>GitHub Repository</h3>
+                    <p>Access all test scripts, examples, and source code</p>
+                    <a href="https://github.com/markusvankempen/wxo-labs" class="resource-link">View Repo →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🔧</div>
+                    <h3>CLI Reference</h3>
+                    <p>Complete guide to orchestrate CLI commands and options</p>
+                    <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#quick-reference" class="resource-link">View Guide →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🐛</div>
+                    <h3>Troubleshooting</h3>
+                    <p>Common issues, solutions, and debugging techniques</p>
+                    <a href="https://github.com/markusvankempen/wxo-labs/blob/main/WXO_LABS_TUTORIAL_GUIDE.md#troubleshooting-guide" class="resource-link">View Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WXO Labs</h4>
+                    <p>Comprehensive tutorial guide for IBM Watsonx Orchestrate</p>
+                    <p class="footer-author">
+                        <strong>Author:</strong> Markus van Kempen<br>
+                        <a href="mailto:mvk@ca.ibm.com">mvk@ca.ibm.com</a><br>
+                        <a href="https://markusvankempen.github.io/">markusvankempen.github.io</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#easy">Easy Labs</a></li>
+                        <li><a href="#intermediate">Intermediate Labs</a></li>
+                        <li><a href="#advanced">Advanced Labs</a></li>
+                        <li><a href="#expert">Expert Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.watson-orchestrate.ibm.com/">Documentation</a></li>
+                        <li><a href="https://github.com/markusvankempen/wxo-labs">GitHub</a></li>
+                        <li><a href="../orchestrate_cli_reference/">CLI Reference</a></li>
+                        <li><a href="../lifecycle_and_troubleshooting/">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Markus van Kempen. Apache 2.0. <em>No bug too small, no syntax too weird.</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

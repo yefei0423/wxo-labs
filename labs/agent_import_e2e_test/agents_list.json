@@ -1,0 +1,1570 @@
+{
+  "native": [
+    {
+      "kind": "native",
+      "id": "f236b5f0-9fc8-418c-bbad-989f082271f2",
+      "name": "input_blocking_test_agentv3",
+      "display_name": "input_blocking_test_agentv3",
+      "description": "Agent that demonstrates input blocking during long-running tool execution.\nUses a pre-invoke plugin to check tool state and block user messages\nwhile processing is in progress.\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "watsonx/meta-llama/llama-3-3-70b-instruct",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a helpful assistant that can run long-running data processing operations.\n\nWhen a user asks you to start processing, use the `long_running_toolv3` to begin\nthe operation. The tool will take 30 seconds by default (or a custom duration).\n\nWhile a tool is running, the pre-invoke plugin will automatically block any new\nuser messages and show them a \"processing in progress\" message with the current\nprogress percentage.\n\nYou can also:\n- Check tool status using `check_tool_statusv3`\n- Manually clear stuck state using `clear_tool_state`\n\nBe friendly and explain what's happening to the user.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "a6383397-6aaa-4949-9e82-bc481cbd10ac",
+        "2cf851a3-bc01-41b0-8843-843979437d80",
+        "7790ae7c-d0c2-447b-9137-b087000b9014"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "34daab8a-66fc-45da-b912-6ba415a3efbc",
+      "name": "WxoBuilderTestAgent",
+      "display_name": "WxoBuilderTestAgent",
+      "description": "WxO Builder internal agent for remote tool testing. Do not delete.",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": true,
+      "instructions": "When the user asks you to execute a tool, execute it and return the raw result. Do not add commentary.",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "00b346ed-9cbb-472c-af98-6544ade0c34c"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "starter_prompts": {
+        "is_default_prompts": false,
+        "prompts": [
+          {
+            "id": "2f628f5c-12c9-449e-b214-5aa707a9c1c8",
+            "title": "What can you do for me?",
+            "prompt": "Summarize the capabilities of watsonx Orchestrate.",
+            "state": "active"
+          },
+          {
+            "id": "2a99b3c1-606d-4456-b005-a0c9c95ef92f",
+            "title": "Formalize Message",
+            "prompt": "Please revise the text in the following prompt to improve clarity and brevity, while preserving all essential information.",
+            "state": "active"
+          },
+          {
+            "id": "2c7de396-8e75-45a8-80e8-e25b2f3cb4e3",
+            "title": "Summarize Meeting Notes",
+            "prompt": "Create a bulleted summary highlighting key points from the meeting notes sent in the next prompt.",
+            "state": "active"
+          }
+        ]
+      },
+      "welcome_content": {
+        "welcome_message": "Hello, welcome to watsonx Orchestrate",
+        "is_default_message": false
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "1ee1c18c-5284-420d-87a7-2dfde1f8abf1",
+      "name": "PolicyTestAgentv2",
+      "display_name": "Policy Test Agent-mvk",
+      "description": "Agent to verify model policy routingv2",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "virtual-policy/fallback_policy",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a helpful assistant. Just answer the user's question briefly.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "starter_prompts": {
+        "is_default_prompts": false,
+        "prompts": [
+          {
+            "id": "cf676fef-7c17-4019-b86f-edd512c2c1d2",
+            "title": "What can you do for me?",
+            "prompt": "Summarize the capabilities of watsonx Orchestrate.",
+            "state": "active"
+          },
+          {
+            "id": "e9ee71ff-71a4-4a81-bd8c-c928da9cd954",
+            "title": "Formalize Message",
+            "prompt": "Please revise the text in the following prompt to improve clarity and brevity, while preserving all essential information.",
+            "state": "active"
+          },
+          {
+            "id": "3e511304-591d-4ede-8274-5efa22138600",
+            "title": "Summarize Meeting Notes",
+            "prompt": "Create a bulleted summary highlighting key points from the meeting notes sent in the next prompt.",
+            "state": "active"
+          }
+        ]
+      },
+      "welcome_content": {
+        "welcome_message": "Hello, welcome to watsonx Orchestrate",
+        "is_default_message": false
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "4fbf0523-8348-4062-821f-bdbc3ce49ad9",
+      "name": "input_blocking_test_agent",
+      "display_name": "input_blocking_test_agent",
+      "description": "Agent that demonstrates input blocking during long-running tool execution.\nUses a pre-invoke plugin to check tool state and block user messages\nwhile processing is in progress.\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "watsonx/meta-llama/llama-3-3-70b-instruct",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a helpful assistant that can run long-running data processing operations.\n\nWhen a user asks you to start processing, use the `long_running_tool` to begin\nthe operation. The tool will take 30 seconds by default (or a custom duration).\n\nWhile a tool is running, the pre-invoke plugin will automatically block any new\nuser messages and show them a \"processing in progress\" message with the current\nprogress percentage.\n\nYou can also:\n- Check tool status using `check_tool_status`\n- Manually clear stuck state using `clear_tool_state`\n\nBe friendly and explain what's happening to the user.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "e749151c-655e-4506-be89-db291dabc0a5",
+        "a06d88e3-6bb3-4eec-8c23-3187c83e2247",
+        "f8529dc4-f91e-4bf3-b0ef-be98544fe848"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [
+          {
+            "plugin_id": "f4c82ec2-403d-4b21-acf5-2de6ce39c0b7"
+          }
+        ],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "starter_prompts": {
+        "is_default_prompts": false,
+        "prompts": [
+          {
+            "id": "3edd5e45-7d52-467c-9a29-fd8254dc07af",
+            "title": "What can you do for me?",
+            "subtitle": "Learn about watsonx Orchestrate AI Agent and Gen AI capabilities",
+            "prompt": "Summarize the capabilities of watsonx Orchestrate.",
+            "state": "active"
+          },
+          {
+            "id": "b5755cc0-520a-4935-b6e4-bc4a6c31d5df",
+            "title": "Formalize Message",
+            "subtitle": "Craft more professional messages",
+            "prompt": "Please revise the text in the following prompt to improve clarity and brevity, while preserving all essential information.",
+            "state": "active"
+          },
+          {
+            "id": "a73b4e7b-523a-4f1d-afe6-ce5e07c09dd8",
+            "title": "Summarize Meeting Notes",
+            "subtitle": "Bullet key points from meeting notes",
+            "prompt": "Create a bulleted summary highlighting key points from the meeting notes sent in the next prompt.",
+            "state": "active"
+          }
+        ]
+      },
+      "welcome_content": {
+        "welcome_message": "Hello, welcome to watsonx Orchestrate",
+        "is_default_message": false
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "c9f1b9e9-44a4-48bf-ae65-308136b8f7e1",
+      "name": "wxo_gemini_orchestrator",
+      "display_name": "WXO Multi-Agent Orchestrator",
+      "description": "Primary agent that delegates tasks to external LLMs like Gemini",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are an intelligent orchestrator for Watsonx Orchestrate.\nYour job is to route user requests to the most appropriate collaborator.\nIf the user asks \"Ask Gemini: ...\", route the message to 'gemini_external_agent'.\nAlways acknowledge which agent you are delegating to.\n",
+      "guidelines": [],
+      "collaborators": [
+        "011abada-99d0-4885-ae28-da685d5164f3"
+      ],
+      "tools": [],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "c990d576-f1e7-435f-b5e4-8d70fabe3e06",
+      "name": "context_debug_agent_b",
+      "display_name": "context_debug_agent_b",
+      "description": "Secondary agent to verify context inheritance from a primary agent.",
+      "context_access_enabled": true,
+      "context_variables": [
+        "countryCode",
+        "countryName",
+        "ts_number",
+        "user_timezone"
+      ],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a collaborator agent. Your job is to check if you inherited context from the primary agent.\nUse the `probe_context_variables` tool and report what you see.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "11765802-5e8a-4a2b-9b3b-4d5d99242dce"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "4a56351e-85b6-4e4c-bc9d-aba92e159a94",
+      "name": "context_debug_agent_a",
+      "display_name": "context_debug_agent_a",
+      "description": "Diagnostic agent to verify context variable propagation from JWT and across tools.",
+      "context_access_enabled": true,
+      "context_variables": [
+        "countryCode",
+        "countryName",
+        "ts_number",
+        "user_timezone"
+      ],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a diagnostic agent. Your goal is to inspect context variables.\nIf the user asks to probe or check context, use the `probe_context_variables` tool.\nIf the user asks to set context, use the `set_debug_context` tool.\nIf the user asks to \"debug via API\", use the `debugContext` tool.\n",
+      "guidelines": [],
+      "collaborators": [
+        "c990d576-f1e7-435f-b5e4-8d70fabe3e06"
+      ],
+      "tools": [
+        "11765802-5e8a-4a2b-9b3b-4d5d99242dce",
+        "90cdcad6-1397-4cda-a850-a0bbfaa75b5b",
+        "11379e1d-bf64-4004-bdf9-618332f6a69c"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "7d6a99fa-888a-4387-a6f1-e0c3b922b9cb",
+      "name": "RetryPolicyTestAgent",
+      "display_name": "Retry Policy Test Agent",
+      "description": "Agent to test WxO retry capabilities with custom x-retry-policy extensions",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a test agent designed to help verify retry policy behavior in WxO.\n\nYour role is to:\n1. Execute operations that may fail intermittently\n2. Report on whether retries occurred and how many attempts were made\n3. Help identify if WxO respects x-retry-policy extensions in OpenAPI specs\n\nWhen using tools:\n- Note any retry behavior you observe\n- Report the number of attempts made\n- Indicate whether the operation eventually succeeded or failed\n- Mention any Retry-After headers or delays observed\n\nBe clear and concise in your responses.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "d8e8623c-2ce8-4bde-a924-9073166a7c49",
+        "5d294024-3cf5-4e0f-8ce0-535cea8b89d4",
+        "c559928c-2f51-442b-b709-68394d9c5e49"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "dbee355c-9c00-4ce6-b3dc-389c03bbe348",
+      "name": "native_auth_verifier_agent",
+      "display_name": "native_auth_verifier_agent",
+      "description": "A native agent built to wrap the custom connection toolkit \nto prove that custom tokens are successfully processed over \nOpenAPI bindings.\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a test drone. You possess the `sendChatMessage` tool. \nWhen the user asks you to verify headers or send a query, ALWAYS execute out to the \n`sendChatMessage` tool and give the exact JSON response back to the user without hallucinating.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "acef3690-8dda-40e1-b6c9-7da71731f7f9"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "9eac2b07-b77c-4a67-8615-8c439ee9bcd7",
+      "name": "mcp_auth_verifier_agent",
+      "display_name": "mcp_auth_verifier_agent",
+      "description": "Uses an MCP toolkit to prove that multiple custom environment variables \n(CLIENT_ID and CLIENT_SECRET) can be successfully injected into a tool runtime.\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "Your purpose is to verify authentication injection. \nWhen the user asks to verify auth or check credentials, ALWAYS call the \n`verify_custom_auth_injection` tool and report the results exactly.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "46f85cc7-d9cf-417a-80c3-9f94d6ab0710"
+      ],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "08da6900-c7b0-42c3-a3cf-42ee35078aeb",
+      "name": "a2a_wrapper_agent",
+      "display_name": "a2a_wrapper_agent",
+      "description": "Wrapper to test A2A external agent calls natively.",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are an orchestrator. When asked about A2A or headers, explicitly route \nthe conversation to the `a2a_auth_custom` collaborator to process the request.\n",
+      "guidelines": [],
+      "collaborators": [
+        "4f5c7469-1d87-445d-8c6b-d94130ac7f53"
+      ],
+      "tools": [],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "9fe2d6ae-69c3-43bc-9c7e-83df4e820c08",
+      "name": "connection_probe_agent",
+      "display_name": "connection_probe_agent",
+      "description": "Test agent for verifying MCP key_value connection injection.",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "groq/openai/gpt-oss-120b",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You help verify that WxO correctly injects credentials from a key_value connection\ninto an MCP tool's environment variables.\n\nWhen the user asks to check credentials or test the connection, ALWAYS call the\ndebug_env_vars tool and report the exact result back.\n\nIf the user asks to render signed images, call render_signed_images.\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "f6ec2682-aa2b-4a3f-85f9-32cd58134a20",
+      "name": "AskOrchestrate",
+      "display_name": "AskOrchestrate",
+      "description": "A helpful AI assistant",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "memory_enabled": false,
+      "llm": "watsonx/meta-llama/llama-3-2-90b-vision-instruct",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [],
+      "toolkits": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null,
+        "parallel_tool_calls": null,
+        "disable_tool_validation": null,
+        "verbosity": null
+      }
+    }
+  ],
+  "assistant": [],
+  "external": [
+    {
+      "kind": "external",
+      "id": "4f5c7469-1d87-445d-8c6b-d94130ac7f53",
+      "name": "a2a_auth_custom",
+      "description": "Testing if custom auth config like client_id and client_secret works\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "title": "A2A Custom Auth Agent",
+      "tags": [
+        "test"
+      ],
+      "api_url": "<hidden>",
+      "auth_scheme": "API_KEY",
+      "auth_config": {},
+      "provider": "external_chat",
+      "chat_params": {
+        "stream": false
+      },
+      "config": {
+        "hidden": false,
+        "enable_cot": true
+      },
+      "nickname": "custom_auth"
+    },
+    {
+      "kind": "external",
+      "id": "efc3eebc-e98d-4c6c-93bd-7ae60b0d5644",
+      "name": "a2a_auth_standard",
+      "description": "Testing standard API KEY auth\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "title": "A2A Standard Auth Agent",
+      "tags": [
+        "test"
+      ],
+      "api_url": "<hidden>",
+      "auth_scheme": "API_KEY",
+      "auth_config": {},
+      "provider": "external_chat",
+      "chat_params": {
+        "stream": false
+      },
+      "config": {
+        "hidden": false,
+        "enable_cot": true
+      },
+      "nickname": "standard_auth"
+    },
+    {
+      "kind": "external",
+      "id": "011abada-99d0-4885-ae28-da685d5164f3",
+      "name": "gemini_external_agent",
+      "description": "Google Gemini 2.0 Flash Experimental model integration.\nProvides fast, intelligent responses with multimodal capabilities.\nIdeal for general knowledge, creative tasks, and rapid prototyping.\n",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "title": "Google Gemini AI Assistant",
+      "tags": [
+        "gemini",
+        "google",
+        "external",
+        "a2a",
+        "llm"
+      ],
+      "api_url": "<hidden>",
+      "auth_scheme": "NONE",
+      "auth_config": {},
+      "provider": "external_chat",
+      "chat_params": {
+        "stream": false,
+        "temperature": 0.7,
+        "max_tokens": 8192,
+        "top_p": 0.95,
+        "top_k": 40
+      },
+      "config": {
+        "hidden": false,
+        "enable_cot": false
+      },
+      "nickname": "gemini"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+# ==============================================================================
+# Skill Definition: SSO Identity Probe
+# ==============================================================================
+# **Author:** Markus van Kempen | mvk@ca.ibm.com  
+# [Research | Floor 7½ 🏢🤏](https://pages.github.ibm.com/mvankempen/homepage/)  
+# *No bug too small, no syntax too weird.*
+# ==============================================================================
+openapi: 3.0.0
+info:
+  title: Entra ID Identity Probe
+  version: 1.0.0
+  description: A tool used to verify user identity propagation from Microsoft Entra ID.
+servers:
+  - url: "https://9da6-93-47-121-136.ngrok-free.app"
+paths:
+  /whoami:
+    get:
+      summary: Get user identity context
+      description: Returns the user identity tokens and headers received from Watsonx Orchestrate.
+      operationId: getIdentityContext
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  roles:
+                    type: array
+                    items:
+                      type: string
+                  raw_headers:
+                    type: object
+components:
+  securitySchemes:
+    samlAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-ibm-authentication-type: saml
+security:
+  - samlAuth: []

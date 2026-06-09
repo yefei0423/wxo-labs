@@ -1,0 +1,308 @@
+                                     Agents                                     
+┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━┓
+┃        ┃        ┃        ┃        ┃        ┃       ┃        ┃ Know… ┃        ┃
+┃ Name   ┃ Descr… ┃ LLM    ┃ Style  ┃ Colla… ┃ Tools ┃ Plugi… ┃ Base  ┃ ID     ┃
+┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━┩
+│ conver │ Agent  │ groq/o │ defau… │        │ say_… │ loggi… │       │ f80732 │
+│ sation │ that   │ penai/ │        │        │       │ loggi… │       │ 9a-1e3 │
+│ _logge │ logs   │ gpt-os │        │        │       │        │       │ 6-4711 │
+│ r_agen │ all    │ s-120b │        │        │       │        │       │ -9555- │
+│ t      │ inter… │        │        │        │       │        │       │ 08861a │
+│        │ to a   │        │        │        │       │        │       │ 13d1a6 │
+│        │ priva… │        │        │        │       │        │       │        │
+│        │ SQLite │        │        │        │       │        │       │        │
+│        │ datab… │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ gemini │ Test   │ google │ defau… │        │       │        │       │ c7d5ec │
+│ _nativ │ agent  │ /gemin │        │        │       │        │       │ 9f-a19 │
+│ e_test │ using  │ i-2.5- │        │        │       │        │       │ d-42a3 │
+│ _agent │ Google │ flash  │        │        │       │        │       │ -98ee- │
+│        │ Gemini │        │        │        │       │        │       │ 6f08fb │
+│        │ 2.0    │        │        │        │       │        │       │ b1b239 │
+│        │ Flash  │        │        │        │       │        │       │        │
+│        │ via    │        │        │        │       │        │       │        │
+│        │ native │        │        │        │       │        │       │        │
+│        │ Watson │        │        │        │       │        │       │        │
+│        │ Orche… │        │        │        │       │        │       │        │
+│        │ integ… │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ guardr │ Agent  │ groq/o │ defau… │        │ say_… │ guard… │       │ 40a699 │
+│ ail_re │ to     │ penai/ │        │        │       │        │       │ 7c-ada │
+│ pro_ag │ repro… │ gpt-os │        │        │       │        │       │ 1-4786 │
+│ ent    │ poten… │ s-120b │        │        │       │        │       │ -ba6c- │
+│        │ cachi… │        │        │        │       │        │       │ 11547e │
+│        │ issues │        │        │        │       │        │       │ 4725d8 │
+│        │ when a │        │        │        │       │        │       │        │
+│        │ pre-i… │        │        │        │       │        │       │        │
+│        │ plugin │        │        │        │       │        │       │        │
+│        │ sets   │        │        │        │       │        │       │        │
+│        │ conti… │        │        │        │       │        │       │        │
+│        │ =      │        │        │        │       │        │       │        │
+│        │ False. │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ azure_ │ Test   │ virtua │ defau… │        │       │        │       │ 53a0c8 │
+│ openai │ agent  │ l-mode │        │        │       │        │       │ 30-505 │
+│ _patch │ using  │ l/azur │        │        │       │        │       │ b-4c29 │
+│ ed_tes │ Azure  │ e-open │        │        │       │        │       │ -bc45- │
+│ t      │ OpenAI │ ai/gpt │        │        │       │        │       │ 8fc5b6 │
+│        │ model  │ -5-nan │        │        │       │        │       │ 7c7e86 │
+│        │ deplo… │ o-patc │        │        │       │        │       │        │
+│        │ with   │ hed    │        │        │       │        │       │        │
+│        │ patch… │        │        │        │       │        │       │        │
+│        │ ADK    │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ azure_ │ Test   │ virtua │ defau… │        │       │        │       │ a7c15b │
+│ openai │ agent  │ l-mode │        │        │       │        │       │ c3-480 │
+│ _test_ │ using  │ l/azur │        │        │       │        │       │ 0-4adf │
+│ agent  │ Azure  │ e-open │        │        │       │        │       │ -a2a1- │
+│        │ OpenAI │ ai/gpt │        │        │       │        │       │ 95927a │
+│        │ model  │ -5-nan │        │        │       │        │       │ 7534fd │
+│        │        │ o-with │        │        │       │        │       │        │
+│        │        │ -creds │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ input_ │ Agent  │ watson │ defau… │        │ long… │ block… │       │ f236b5 │
+│ blocki │ that   │ x/meta │        │        │ long… │        │       │ f0-9fc │
+│ ng_tes │ demon… │ -llama │        │        │ long… │        │       │ 8-418c │
+│ t_agen │ input  │ /llama │        │        │       │        │       │ -bbad- │
+│ tv3    │ block… │ -3-3-7 │        │        │       │        │       │ 989f08 │
+│        │ during │ 0b-ins │        │        │       │        │       │ 2271f2 │
+│        │ long-… │ truct  │        │        │       │        │       │        │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ execu… │        │        │        │       │        │       │        │
+│        │ Uses a │        │        │        │       │        │       │        │
+│        │ pre-i… │        │        │        │       │        │       │        │
+│        │ plugin │        │        │        │       │        │       │        │
+│        │ to     │        │        │        │       │        │       │        │
+│        │ check  │        │        │        │       │        │       │        │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ state  │        │        │        │       │        │       │        │
+│        │ and    │        │        │        │       │        │       │        │
+│        │ block  │        │        │        │       │        │       │        │
+│        │ user   │        │        │        │       │        │       │        │
+│        │ messa… │        │        │        │       │        │       │        │
+│        │ while  │        │        │        │       │        │       │        │
+│        │ proce… │        │        │        │       │        │       │        │
+│        │ is in  │        │        │        │       │        │       │        │
+│        │ progr… │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ WxoBui │ WxO    │ groq/o │ defau… │        │ Worl… │        │       │ 34daab │
+│ lderTe │ Build… │ penai/ │        │        │       │        │       │ 8a-66f │
+│ stAgen │ inter… │ gpt-os │        │        │       │        │       │ c-45da │
+│ t      │ agent  │ s-120b │        │        │       │        │       │ -b912- │
+│        │ for    │        │        │        │       │        │       │ 6ba415 │
+│        │ remote │        │        │        │       │        │       │ a3efbc │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ testi… │        │        │        │       │        │       │        │
+│        │ Do not │        │        │        │       │        │       │        │
+│        │ delet… │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ Policy │ Agent  │ virtua │ defau… │        │       │        │       │ 1ee1c1 │
+│ TestAg │ to     │ l-poli │        │        │       │        │       │ 8c-528 │
+│ entv2  │ verify │ cy/fal │        │        │       │        │       │ 4-420d │
+│ (Polic │ model  │ lback_ │        │        │       │        │       │ -87a7- │
+│ y Test │ policy │ policy │        │        │       │        │       │ 2dfde1 │
+│ Agent- │ routi… │        │        │        │       │        │       │ f8abf1 │
+│ mvk)   │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ input_ │ Agent  │ watson │ defau… │        │ long… │ block… │       │ 4fbf05 │
+│ blocki │ that   │ x/meta │        │        │ chec… │        │       │ 23-834 │
+│ ng_tes │ demon… │ -llama │        │        │ clea… │        │       │ 8-4062 │
+│ t_agen │ input  │ /llama │        │        │       │        │       │ -821f- │
+│ t      │ block… │ -3-3-7 │        │        │       │        │       │ bdbc3c │
+│        │ during │ 0b-ins │        │        │       │        │       │ e49ad9 │
+│        │ long-… │ truct  │        │        │       │        │       │        │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ execu… │        │        │        │       │        │       │        │
+│        │ Uses a │        │        │        │       │        │       │        │
+│        │ pre-i… │        │        │        │       │        │       │        │
+│        │ plugin │        │        │        │       │        │       │        │
+│        │ to     │        │        │        │       │        │       │        │
+│        │ check  │        │        │        │       │        │       │        │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ state  │        │        │        │       │        │       │        │
+│        │ and    │        │        │        │       │        │       │        │
+│        │ block  │        │        │        │       │        │       │        │
+│        │ user   │        │        │        │       │        │       │        │
+│        │ messa… │        │        │        │       │        │       │        │
+│        │ while  │        │        │        │       │        │       │        │
+│        │ proce… │        │        │        │       │        │       │        │
+│        │ is in  │        │        │        │       │        │       │        │
+│        │ progr… │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ wxo_ge │ Prima… │ groq/o │ defau… │ gemin… │       │        │       │ c9f1b9 │
+│ mini_o │ agent  │ penai/ │        │        │       │        │       │ e9-44a │
+│ rchest │ that   │ gpt-os │        │        │       │        │       │ 4-48bf │
+│ rator  │ deleg… │ s-120b │        │        │       │        │       │ -ae65- │
+│ (WXO   │ tasks  │        │        │        │       │        │       │ 308136 │
+│ Multi- │ to     │        │        │        │       │        │       │ b8f7e1 │
+│ Agent  │ exter… │        │        │        │       │        │       │        │
+│ Orches │ LLMs   │        │        │        │       │        │       │        │
+│ trator │ like   │        │        │        │       │        │       │        │
+│ )      │ Gemini │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ contex │ Secon… │ groq/o │ defau… │        │ prob… │        │       │ c990d5 │
+│ t_debu │ agent  │ penai/ │        │        │       │        │       │ 76-f1e │
+│ g_agen │ to     │ gpt-os │        │        │       │        │       │ 7-435f │
+│ t_b    │ verify │ s-120b │        │        │       │        │       │ -b5e4- │
+│        │ conte… │        │        │        │       │        │       │ 8d70fa │
+│        │ inher… │        │        │        │       │        │       │ be3e06 │
+│        │ from a │        │        │        │       │        │       │        │
+│        │ prima… │        │        │        │       │        │       │        │
+│        │ agent. │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ contex │ Diagn… │ groq/o │ defau… │ conte… │ prob… │        │       │ 4a5635 │
+│ t_debu │ agent  │ penai/ │        │        │ set_… │        │       │ 1e-85b │
+│ g_agen │ to     │ gpt-os │        │        │ debu… │        │       │ 6-4e4c │
+│ t_a    │ verify │ s-120b │        │        │       │        │       │ -bc9d- │
+│        │ conte… │        │        │        │       │        │       │ aba92e │
+│        │ varia… │        │        │        │       │        │       │ 159a94 │
+│        │ propa… │        │        │        │       │        │       │        │
+│        │ from   │        │        │        │       │        │       │        │
+│        │ JWT    │        │        │        │       │        │       │        │
+│        │ and    │        │        │        │       │        │       │        │
+│        │ across │        │        │        │       │        │       │        │
+│        │ tools. │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ RetryP │ Agent  │ groq/o │ defau… │        │ alwa… │        │       │ 7d6a99 │
+│ olicyT │ to     │ penai/ │        │        │ alwa… │        │       │ fa-888 │
+│ estAge │ test   │ gpt-os │        │        │ retr… │        │       │ a-4387 │
+│ nt     │ WxO    │ s-120b │        │        │       │        │       │ -a6f1- │
+│ (Retry │ retry  │        │        │        │       │        │       │ e0c3b9 │
+│ Policy │ capab… │        │        │        │       │        │       │ 22b9cb │
+│ Test   │ with   │        │        │        │       │        │       │        │
+│ Agent) │ custom │        │        │        │       │        │       │        │
+│        │ x-ret… │        │        │        │       │        │       │        │
+│        │ exten… │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ native │ A      │ groq/o │ defau… │        │ send… │        │       │ dbee35 │
+│ _auth_ │ native │ penai/ │        │        │       │        │       │ 5c-9c0 │
+│ verifi │ agent  │ gpt-os │        │        │       │        │       │ 0-4ce6 │
+│ er_age │ built  │ s-120b │        │        │       │        │       │ -b3dc- │
+│ nt     │ to     │        │        │        │       │        │       │ 389c03 │
+│        │ wrap   │        │        │        │       │        │       │ bbe348 │
+│        │ the    │        │        │        │       │        │       │        │
+│        │ custom │        │        │        │       │        │       │        │
+│        │ conne… │        │        │        │       │        │       │        │
+│        │ toolk… │        │        │        │       │        │       │        │
+│        │ to     │        │        │        │       │        │       │        │
+│        │ prove  │        │        │        │       │        │       │        │
+│        │ that   │        │        │        │       │        │       │        │
+│        │ custom │        │        │        │       │        │       │        │
+│        │ tokens │        │        │        │       │        │       │        │
+│        │ are    │        │        │        │       │        │       │        │
+│        │ succe… │        │        │        │       │        │       │        │
+│        │ proce… │        │        │        │       │        │       │        │
+│        │ over   │        │        │        │       │        │       │        │
+│        │ OpenA… │        │        │        │       │        │       │        │
+│        │ bindi… │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ mcp_au │ Uses   │ groq/o │ defau… │        │ remo… │        │       │ 9eac2b │
+│ th_ver │ an MCP │ penai/ │        │        │       │        │       │ 07-b77 │
+│ ifier_ │ toolk… │ gpt-os │        │        │       │        │       │ c-4a67 │
+│ agent  │ to     │ s-120b │        │        │       │        │       │ -8615- │
+│        │ prove  │        │        │        │       │        │       │ 8c439e │
+│        │ that   │        │        │        │       │        │       │ e9bcd7 │
+│        │ multi… │        │        │        │       │        │       │        │
+│        │ custom │        │        │        │       │        │       │        │
+│        │ envir… │        │        │        │       │        │       │        │
+│        │ varia… │        │        │        │       │        │       │        │
+│        │ (CLIE… │        │        │        │       │        │       │        │
+│        │ and    │        │        │        │       │        │       │        │
+│        │ CLIEN… │        │        │        │       │        │       │        │
+│        │ can be │        │        │        │       │        │       │        │
+│        │ succe… │        │        │        │       │        │       │        │
+│        │ injec… │        │        │        │       │        │       │        │
+│        │ into a │        │        │        │       │        │       │        │
+│        │ tool   │        │        │        │       │        │       │        │
+│        │ runti… │        │        │        │       │        │       │        │
+│        │        │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ a2a_wr │ Wrapp… │ groq/o │ defau… │ a2a_a… │       │        │       │ 08da69 │
+│ apper_ │ to     │ penai/ │        │        │       │        │       │ 00-c7b │
+│ agent  │ test   │ gpt-os │        │        │       │        │       │ 0-42c3 │
+│        │ A2A    │ s-120b │        │        │       │        │       │ -a3cf- │
+│        │ exter… │        │        │        │       │        │       │ 42ee35 │
+│        │ agent  │        │        │        │       │        │       │ 078aeb │
+│        │ calls  │        │        │        │       │        │       │        │
+│        │ nativ… │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ connec │ Test   │ groq/o │ defau… │        │       │        │       │ 9fe2d6 │
+│ tion_p │ agent  │ penai/ │        │        │       │        │       │ ae-69c │
+│ robe_a │ for    │ gpt-os │        │        │       │        │       │ 3-43bc │
+│ gent   │ verif… │ s-120b │        │        │       │        │       │ -9c7e- │
+│        │ MCP    │        │        │        │       │        │       │ 83df4e │
+│        │ key_v… │        │        │        │       │        │       │ 820c08 │
+│        │ conne… │        │        │        │       │        │       │        │
+│        │ injec… │        │        │        │       │        │       │        │
+├────────┼────────┼────────┼────────┼────────┼───────┼────────┼───────┼────────┤
+│ AskOrc │ A      │ watson │ defau… │        │       │        │       │ f6ec26 │
+│ hestra │ helpf… │ x/meta │        │        │       │        │       │ 82-aa2 │
+│ te     │ AI     │ -llama │        │        │       │        │       │ b-4a3f │
+│        │ assis… │ /llama │        │        │       │        │       │ -85f9- │
+│        │        │ -3-2-9 │        │        │       │        │       │ 32cd58 │
+│        │        │ 0b-vis │        │        │       │        │       │ 134a20 │
+│        │        │ ion-in │        │        │       │        │       │        │
+│        │        │ struct │        │        │       │        │       │        │
+└────────┴────────┴────────┴────────┴────────┴───────┴────────┴───────┴────────┘
+                                External Agents                                 
+┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━┳━━━━━━━┓
+┃       ┃       ┃       ┃       ┃ API   ┃ Chat  ┃       ┃       ┃ App  ┃       ┃
+┃ Name  ┃ Title ┃ Desc… ┃ Tags  ┃ URL   ┃ Para… ┃ Conf… ┃ Nick… ┃ ID   ┃ ID    ┃
+┡━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━╇━━━━━━━┩
+│ a2a_a │ A2A   │ Test… │ test  │ <hidd │ {"st… │ hidd… │ cust… │      │ 4f5c7 │
+│ uth_c │ Cust… │ if    │       │ en>   │ fals… │ enab… │       │      │ 469-1 │
+│ ustom │ Auth  │ cust… │       │       │       │       │       │      │ d87-4 │
+│       │ Agent │ auth  │       │       │       │       │       │      │ 45d-8 │
+│       │       │ conf… │       │       │       │       │       │      │ c6b-d │
+│       │       │ like  │       │       │       │       │       │      │ 94130 │
+│       │       │ clie… │       │       │       │       │       │      │ ac7f5 │
+│       │       │ and   │       │       │       │       │       │      │ 3     │
+│       │       │ clie… │       │       │       │       │       │      │       │
+│       │       │ works │       │       │       │       │       │      │       │
+│       │       │       │       │       │       │       │       │      │       │
+├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┤
+│ a2a_a │ A2A   │ Test… │ test  │ <hidd │ {"st… │ hidd… │ stan… │      │ efc3e │
+│ uth_s │ Stan… │ stan… │       │ en>   │ fals… │ enab… │       │      │ ebc-e │
+│ tanda │ Auth  │ API   │       │       │       │       │       │      │ 98d-4 │
+│ rd    │ Agent │ KEY   │       │       │       │       │       │      │ c6c-9 │
+│       │       │ auth  │       │       │       │       │       │      │ 3bd-7 │
+│       │       │       │       │       │       │       │       │      │ ae60b │
+│       │       │       │       │       │       │       │       │      │ 0d564 │
+│       │       │       │       │       │       │       │       │      │ 4     │
+├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┤
+│ gemin │ Goog… │ Goog… │ gemi… │ <hidd │ {"st… │ hidd… │ gemi… │      │ 011ab │
+│ i_ext │ Gemi… │ Gemi… │ goog… │ en>   │ fals… │ enab… │       │      │ ada-9 │
+│ ernal │ AI    │ 2.0   │ exte… │       │ "tem… │       │       │      │ 9d0-4 │
+│ _agen │ Assi… │ Flash │ a2a,  │       │ 0.7,  │       │       │      │ 885-a │
+│ t     │       │ Expe… │ llm   │       │ "max… │       │       │      │ e28-d │
+│       │       │ model │       │       │ 8192, │       │       │      │ a685d │
+│       │       │ inte… │       │       │ "top… │       │       │      │ 5164f │
+│       │       │ Prov… │       │       │ 0.95, │       │       │      │ 3     │
+│       │       │ fast, │       │       │ "top… │       │       │      │       │
+│       │       │ inte… │       │       │ 40}   │       │       │      │       │
+│       │       │ resp… │       │       │       │       │       │      │       │
+│       │       │ with  │       │       │       │       │       │      │       │
+│       │       │ mult… │       │       │       │       │       │      │       │
+│       │       │ capa… │       │       │       │       │       │      │       │
+│       │       │ Ideal │       │       │       │       │       │      │       │
+│       │       │ for   │       │       │       │       │       │      │       │
+│       │       │ gene… │       │       │       │       │       │      │       │
+│       │       │ know… │       │       │       │       │       │      │       │
+│       │       │ crea… │       │       │       │       │       │      │       │
+│       │       │ task… │       │       │       │       │       │      │       │
+│       │       │ and   │       │       │       │       │       │      │       │
+│       │       │ rapid │       │       │       │       │       │      │       │
+│       │       │ prot… │       │       │       │       │       │      │       │
+│       │       │       │       │       │       │       │       │      │       │
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┘
+                                Assistant Agents                                
+┏━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━┳━━━━━━━━┳━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━┓
+┃      ┃       ┃        ┃      ┃        ┃     ┃ Insta… ┃ Assist ┃ Environ ┃    ┃
+┃ Name ┃ Title ┃ Descr… ┃ Tags ┃ Nickn… ┃ CRN ┃ URL    ┃ ant ID ┃ ment ID ┃ ID ┃
+┡━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━╇━━━━━━━━╇━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━┩
+└──────┴───────┴────────┴──────┴────────┴─────┴────────┴────────┴─────────┴────┘

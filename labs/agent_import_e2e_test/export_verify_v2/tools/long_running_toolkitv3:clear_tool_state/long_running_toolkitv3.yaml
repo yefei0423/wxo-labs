@@ -1,0 +1,6 @@
+kind: python
+name: long_running_toolkitv3
+description: Toolkit for long-running operations
+connections: []
+package_root: long_running_toolkitv3
+spec_version: v1

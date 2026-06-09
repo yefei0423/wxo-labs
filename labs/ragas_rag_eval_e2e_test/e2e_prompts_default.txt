@@ -1,0 +1,4 @@
+# One user question per non-empty, non-comment line (stub agent / AskHR demo).
+# Keep questions answerable from tools/ragas_kb_stub.py DOC 1–3 so Ragas ground_truth can align.
+What is AskHR, and what objectives does the documentation mention?
+According to the reference docs, what objectives and expected outcomes does AskHR describe?

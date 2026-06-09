@@ -1,0 +1,34 @@
+spec_version: v1
+kind: native
+name: input_blocking_test_agentv3
+llm: watsonx/meta-llama/llama-3-3-70b-instruct
+style: default
+hide_reasoning: false
+description: |
+  Agent that demonstrates input blocking during long-running tool execution.
+  Uses a pre-invoke plugin to check tool state and block user messages
+  while processing is in progress.
+instructions: |
+  You are a helpful assistant that can run long-running data processing operations.
+
+  When a user asks you to start processing, use the `long_running_toolv3` to begin
+  the operation. The tool will take 30 seconds by default (or a custom duration).
+
+  While a tool is running, the pre-invoke plugin will automatically block any new
+  user messages and show them a "processing in progress" message with the current
+  progress percentage.
+
+  You can also:
+  - Check tool status using `check_tool_statusv3`
+  - Manually clear stuck state using `clear_tool_state`
+
+  Be friendly and explain what's happening to the user.
+tools:
+  - long_running_toolkitv3:long_running_toolv3
+  - long_running_toolkitv3:check_tool_statusv3
+  - long_running_toolkitv3:clear_tool_state
+collaborators: []
+restrictions: editable
+plugins:
+  agent_pre_invoke:
+    - plugin_name: blocking_pluginv3:blocking_pluginv3

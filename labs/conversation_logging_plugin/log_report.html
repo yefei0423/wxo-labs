@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WxO Private Log Viewer</title>
+    <style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --accent: #38bdf8;
+    --user: #7dd3fc;
+    --bot: #c084fc;
+}
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: 'Inter', system-ui, sans-serif; 
+    padding: 2rem;
+    margin: 0;
+}
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-weight: 800; font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
+.subtitle { opacity: 0.7; margin-bottom: 2rem; }
+.turn-card { 
+    background: var(--card); 
+    border-radius: 12px; 
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+.turn-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.meta { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1rem; display: flex; justify-content: space-between; }
+.message { margin-bottom: 1rem; line-height: 1.6; }
+.label { font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; margin-bottom: 0.4rem; display: block; }
+.user-msg { color: var(--user); border-left: 3px solid var(--user); padding-left: 1rem; }
+.bot-msg { color: var(--bot); border-left: 3px solid var(--bot); padding-left: 1rem; }
+.badge { background: rgba(56, 189, 248, 0.2); color: var(--accent); padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕵️‍♂️ Conversation Vault</h1>
+        <p class="subtitle">Secure server-side interaction logs for Watsonx Orchestrate</p>
+        
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                N/A
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                I’m just a virtual assistant, so I don’t have a physical location. I’m here to help you whenever you need!
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                where do u live?
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                [PRE-INVOKE]
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                N/A
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                I’m the Conversation Logger Assistant, here to securely log and respond to your requests.
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                what is you name
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                [PRE-INVOKE]
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                N/A
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                I have logged your request securely.
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                hello
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                [PRE-INVOKE]
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                N/A
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                I have logged your request securely.
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 N/A</span>
+                <span class="badge">AGENT: f807329a-1e36-4711-9555-08861a13d1a6</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                E2E Final Test: This should hit the database on port 5002 via ngrok.
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                [PRE-INVOKE]
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 2026-04-27 07:00:39</span>
+                <span class="badge">AGENT: travel_agent_pro</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                I need to book a flight to London next Tuesday.
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                I found 3 flights available for next Tuesday. The cheapest is $450 with a stopover in Paris.
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 2026-04-27 07:00:39</span>
+                <span class="badge">AGENT: support_bot_v2</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                Can you help me reset my password?
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                Certainly! I've sent a password reset link to your registered email address.
+            </div>
+        </div>
+        
+        <div class="turn-card">
+            <div class="meta">
+                <span>🕒 2026-04-27 07:00:39</span>
+                <span class="badge">AGENT: claims_assistant_v1</span>
+            </div>
+            <div class="message user-msg">
+                <span class="label">User Input</span>
+                What is the status of my recent insurance claim?
+            </div>
+            <div class="message bot-msg">
+                <span class="label">Assistant Response</span>
+                Your claim #12345 is currently 'In Review'. It was received on April 20th.
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

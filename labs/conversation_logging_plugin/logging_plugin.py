@@ -1,0 +1,97 @@
+"""
+Secure Conversation Logging Plugin (Pre/Post-Invoke)
+
+This plugin intercepts conversation turns on the Watsonx Orchestrate Gateway
+and securely forwards them to a private database (e.g., SQLite via a Flask receiver).
+
+**Author:** Markus van Kempen | mvk@ca.ibm.com  
+[Research | Floor 7½ 🏢🤏](https://pages.github.ibm.com/mvankempen/homepage/)  
+*No bug too small, no syntax too weird.*
+"""
+
+import json
+import requests
+from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from ibm_watsonx_orchestrate.agent_builder.tools.types import (
+    PythonToolKind,
+    PluginContext,
+    AgentPreInvokePayload,
+    AgentPreInvokeResult,
+    AgentPostInvokePayload,
+    AgentPostInvokeResult,
+)
+
+@tool(
+    description="Logs conversation input before processing",
+    kind=PythonToolKind.AGENTPREINVOKE,
+)
+def logging_pre_plugin(
+    plugin_context: PluginContext,
+    agent_pre_invoke_payload: AgentPreInvokePayload,
+) -> AgentPreInvokeResult:
+    """
+    Captures the User Input before generation.
+    """
+    db_url = plugin_context.metadata.get("DB_URL") or "https://c3b4-99-239-88-232.ngrok-free.app/log"
+    user_input = agent_pre_invoke_payload.messages[-1].content.text
+    
+    log_entry = {
+        "agent_id": agent_pre_invoke_payload.agent_id,
+        "user_input": user_input,
+        "assistant_output": "[PRE-INVOKE]",
+        "timestamp": plugin_context.metadata.get("timestamp", "N/A"),
+        "context": plugin_context.metadata
+    }
+    
+    try:
+        requests.post(db_url, json=log_entry, headers={"ngrok-skip-browser-warning": "true"}, timeout=5)
+    except Exception:
+        pass
+    
+    return AgentPreInvokeResult(continue_processing=True, modified_payload=agent_pre_invoke_payload)
+
+@tool(
+    description="Logs conversation turns to a private database",
+    kind=PythonToolKind.AGENTPOSTINVOKE,
+)
+def logging_plugin(
+    plugin_context: PluginContext,
+    agent_post_invoke_payload: AgentPostInvokePayload,
+) -> AgentPostInvokeResult:
+    """
+    Captures the interaction after the agent has generated a response
+    and sends it to a private database.
+    """
+    db_url = plugin_context.metadata.get("DB_URL") or "https://c3b4-99-239-88-232.ngrok-free.app/log"
+    error_msg = ""
+
+    try:
+        messages = agent_post_invoke_payload.messages
+        user_input = messages[-2].content.text if len(messages) >= 2 else "N/A"
+        bot_output = messages[-1].content.text if len(messages) >= 1 else "N/A"
+        
+        log_entry = {
+            "agent_id": agent_post_invoke_payload.agent_id,
+            "user_input": user_input,
+            "assistant_output": bot_output,
+            "timestamp": plugin_context.metadata.get("timestamp", "N/A"),
+            "context": plugin_context.metadata
+        }
+        
+        response = requests.post(
+            db_url, 
+            json=log_entry, 
+            headers={"ngrok-skip-browser-warning": "true"}, 
+            timeout=5
+        )
+        if response.status_code != 200:
+            error_msg = f" [DB_HTTP_{response.status_code}]"
+    except Exception as e:
+        error_msg = f" [LOG_ERR: {str(e)[:50]}]"
+    
+    # Hijack the response to show the error code/message in the chat
+    modified_payload = agent_post_invoke_payload.copy(deep=True)
+    if modified_payload.messages and error_msg:
+        modified_payload.messages[-1].content.text += f"\n\n⚠️ {error_msg}"
+
+    return AgentPostInvokeResult(continue_processing=True, modified_payload=modified_payload)

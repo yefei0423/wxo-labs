@@ -1,0 +1,58 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MCP Context Test",
+    "version": "1.0.0",
+    "description": "A test tool to validate WxO passing User Auth headers into a Server-Sent Events MCP connection",
+    "x-ibm-annotations": "true"
+  },
+  "servers": [
+    {
+      "url": "https://0ea9-99-239-88-232.ngrok-free.app",
+      "description": "Ngrok tunnel to Local MCP SSE Server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "WxO injects the user Bearer token into Authorization header"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/check-identity": {
+      "get": {
+        "operationId": "get_session_identity",
+        "summary": "Check Auth Headers",
+        "description": "Calls the server and returns the WxO user Authorization Bearer token extracted from HTTP headers. Validates Pattern 1 (Transport Level Context Passing).",
+        "responses": {
+          "200": {
+            "description": "Identity check result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string" },
+                    "message": { "type": "string" },
+                    "username": { "type": "string", "description": "Authenticated user email or subject from JWT" },
+                    "token_preview": { "type": "string" },
+                    "pattern": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "spec_version": "v1",
+    "name": "mcp_repro_agent",
+    "description": "Agent to validate MCP server discovery and execution. Author: Markus van Kempen",
+    "llm": "groq/openai/gpt-oss-120b",
+    "instructions": "You are a validation agent. Follow these steps:\n1. Use the 'get_repro_data' tool with any query the user provides.\n2. When you receive the response (which should say 'Discovery and Execution are WORKING!'), tell the user exactly that.\n3. The tool is provided by the MCP_SUCCESS_PKG toolkit.",
+    "tools": [
+        "MCP_SUCCESS_PKG:get_repro_data"
+    ]
+}

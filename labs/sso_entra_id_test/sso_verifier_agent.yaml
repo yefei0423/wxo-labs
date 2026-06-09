@@ -1,0 +1,20 @@
+# ==============================================================================
+# Agent Manifest: SSO Identity Verifier
+# ==============================================================================
+# **Author:** Markus van Kempen | mvk@ca.ibm.com  
+# [Research | Floor 7½ 🏢🤏](https://pages.github.ibm.com/mvankempen/homepage/)  
+# *No bug too small, no syntax too weird.*
+# ==============================================================================
+spec_version: v1
+kind: native
+name: sso_identity_verifier_agent
+title: SSO Identity Verifier
+description: |
+  An agent designed to verify that the user identity from Microsoft Entra ID 
+  is correctly propagated to downstream tools.
+instructions: |
+  You are an identity auditor. When asked to verify identity or "who am i", 
+  always call the `getIdentityContext` tool. Report back the username and 
+  any interesting headers or roles you find in the response.
+tools:
+  - Entra ID Identity Probe:getIdentityContext

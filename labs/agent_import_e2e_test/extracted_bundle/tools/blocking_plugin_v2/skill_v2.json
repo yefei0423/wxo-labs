@@ -1,0 +1,726 @@
+{
+  "description": "Pre-invoke plugin that blocks user input while long-running tools execute",
+  "created_by": "643007PPX7",
+  "tags": null,
+  "name": "blocking_plugin_v2",
+  "permission": "read_only",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "plugin_context": {
+        "type": "object",
+        "title": "PluginContext",
+        "description": "The plugin's context, which lasts a request lifecycle.",
+        "properties": {
+          "state": {
+            "type": "object",
+            "title": "State",
+            "additionalProperties": true
+          },
+          "metadata": {
+            "type": "object",
+            "title": "Metadata",
+            "additionalProperties": true
+          },
+          "global_context": {
+            "type": "object",
+            "title": "GlobalContext",
+            "description": "The global context, which shared across all plugins.",
+            "properties": {
+              "user": {
+                "title": "User",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "state": {
+                "type": "object",
+                "title": "State",
+                "additionalProperties": true
+              },
+              "metadata": {
+                "type": "object",
+                "title": "Metadata",
+                "additionalProperties": true
+              },
+              "server_id": {
+                "title": "Server Id",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "tenant_id": {
+                "title": "Tenant Id",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "request_id": {
+                "type": "string",
+                "title": "Request Id"
+              }
+            },
+            "required": [
+              "request_id"
+            ]
+          }
+        },
+        "required": [
+          "global_context"
+        ]
+      },
+      "agent_pre_invoke_payload": {
+        "type": "object",
+        "title": "AgentPreInvokePayload",
+        "properties": {
+          "model": {
+            "title": "Model",
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tools": {
+            "title": "Tools",
+            "default": null,
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "headers": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "title": "HttpHeaderPayload",
+                "description": "HTTP headers payload for plugin requests.",
+                "properties": {
+                  "content_type": {
+                    "title": "Content Type",
+                    "default": "application/json",
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "authorization": {
+                    "title": "Authorization",
+                    "default": null,
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "custom_headers": {
+                    "title": "Custom Headers",
+                    "default": null,
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": []
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "agent_id": {
+            "type": "string",
+            "title": "Agent Id"
+          },
+          "messages": {
+            "type": "array",
+            "title": "Messages",
+            "items": {
+              "type": "object",
+              "title": "Message",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "title": "Role",
+                  "enum": [
+                    "assistant",
+                    "user"
+                  ]
+                },
+                "content": {
+                  "title": "Content",
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "title": "TextContent",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "title": "Text"
+                        },
+                        "type": {
+                          "type": "string",
+                          "title": "Type",
+                          "const": "text"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "title": "JSONContent",
+                      "properties": {
+                        "text": {
+                          "type": "object",
+                          "title": "Text",
+                          "additionalProperties": true
+                        },
+                        "type": {
+                          "type": "string",
+                          "title": "Type",
+                          "const": "text"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "title": "ImageContent",
+                      "properties": {
+                        "data": {
+                          "type": "string",
+                          "title": "Data",
+                          "format": "binary"
+                        },
+                        "type": {
+                          "type": "string",
+                          "title": "Type",
+                          "const": "image"
+                        },
+                        "mime_type": {
+                          "type": "string",
+                          "title": "Mime Type"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "data",
+                        "mime_type"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "title": "ResourceContent",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "title": "Id"
+                        },
+                        "uri": {
+                          "type": "string",
+                          "title": "Uri"
+                        },
+                        "blob": {
+                          "title": "Blob",
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "format": "binary"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "text": {
+                          "title": "Text",
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "type": {
+                          "type": "string",
+                          "title": "Type",
+                          "const": "resource"
+                        },
+                        "mime_type": {
+                          "title": "Mime Type",
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "id",
+                        "uri"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "role",
+                "content"
+              ]
+            }
+          },
+          "parameters": {
+            "title": "Parameters",
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": true
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "system_prompt": {
+            "title": "System Prompt",
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "agent_id",
+          "messages"
+        ]
+      }
+    },
+    "required": [
+      "plugin_context",
+      "agent_pre_invoke_payload"
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "metadata": {
+        "title": "Metadata",
+        "default": null,
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": true
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "violation": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "object",
+            "title": "PluginViolation",
+            "description": "A plugin violation, used to denote policy violations.",
+            "properties": {
+              "code": {
+                "type": "string",
+                "title": "Code"
+              },
+              "reason": {
+                "type": "string",
+                "title": "Reason"
+              },
+              "details": {
+                "type": "object",
+                "title": "Details",
+                "additionalProperties": true
+              },
+              "description": {
+                "type": "string",
+                "title": "Description"
+              }
+            },
+            "required": [
+              "reason",
+              "description",
+              "code",
+              "details"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "modified_payload": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "object",
+            "title": "AgentPreInvokePayload",
+            "properties": {
+              "model": {
+                "title": "Model",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "tools": {
+                "title": "Tools",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "headers": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "title": "HttpHeaderPayload",
+                    "description": "HTTP headers payload for plugin requests.",
+                    "properties": {
+                      "content_type": {
+                        "title": "Content Type",
+                        "default": "application/json",
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "authorization": {
+                        "title": "Authorization",
+                        "default": null,
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "custom_headers": {
+                        "title": "Custom Headers",
+                        "default": null,
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": []
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "agent_id": {
+                "type": "string",
+                "title": "Agent Id"
+              },
+              "messages": {
+                "type": "array",
+                "title": "Messages",
+                "items": {
+                  "type": "object",
+                  "title": "Message",
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "title": "Role",
+                      "enum": [
+                        "assistant",
+                        "user"
+                      ]
+                    },
+                    "content": {
+                      "title": "Content",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "title": "TextContent",
+                          "properties": {
+                            "text": {
+                              "type": "string",
+                              "title": "Text"
+                            },
+                            "type": {
+                              "type": "string",
+                              "title": "Type",
+                              "const": "text"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "text"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "title": "JSONContent",
+                          "properties": {
+                            "text": {
+                              "type": "object",
+                              "title": "Text",
+                              "additionalProperties": true
+                            },
+                            "type": {
+                              "type": "string",
+                              "title": "Type",
+                              "const": "text"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "text"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "title": "ImageContent",
+                          "properties": {
+                            "data": {
+                              "type": "string",
+                              "title": "Data",
+                              "format": "binary"
+                            },
+                            "type": {
+                              "type": "string",
+                              "title": "Type",
+                              "const": "image"
+                            },
+                            "mime_type": {
+                              "type": "string",
+                              "title": "Mime Type"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "data",
+                            "mime_type"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "title": "ResourceContent",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "title": "Id"
+                            },
+                            "uri": {
+                              "type": "string",
+                              "title": "Uri"
+                            },
+                            "blob": {
+                              "title": "Blob",
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "format": "binary"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "text": {
+                              "title": "Text",
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "type": {
+                              "type": "string",
+                              "title": "Type",
+                              "const": "resource"
+                            },
+                            "mime_type": {
+                              "title": "Mime Type",
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "id",
+                            "uri"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "role",
+                    "content"
+                  ]
+                }
+              },
+              "parameters": {
+                "title": "Parameters",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "system_prompt": {
+                "title": "System Prompt",
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "agent_id",
+              "messages"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "continue_processing": {
+        "type": "boolean",
+        "title": "Continue Processing",
+        "default": true
+      }
+    },
+    "required": []
+  },
+  "binding": {
+    "python": {
+      "function": "blocking_plugin:blocking_plugin",
+      "type": "agent_pre_invoke",
+      "requirements": [
+        "# Python dependencies for Input Blocking Plugin Test",
+        "# Author: Markus van Kempen | mvk@ca.ibm.com",
+        "",
+        "# WXO SDK (required for tools and plugins)"
+      ]
+    }
+  },
+  "display_name": "blocking_plugin_v2",
+  "toolkit_id": null,
+  "is_async": false,
+  "response_format": "content",
+  "restrictions": "editable",
+  "bundled_agent_id": null,
+  "workspace_id": "00000000-0000-0000-0000-000000000001",
+  "hidden": false
+}

@@ -1,0 +1,133 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HR Context Tool",
+    "version": "1.0.0",
+    "description": "Validates that WatsonX Orchestrate context variables (clientID, name, role, user_name, email_id) are injected into the askHR_agent instructions and forwarded by the LLM as tool arguments.",
+    "x-ibm-annotations": "true"
+  },
+  "servers": [
+    {
+      "url": "https://0ea1-99-239-88-232.ngrok-free.app",
+      "description": "ngrok tunnel to local mcp_hr_context_server.py on port 8000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "WxO injects the user Bearer token into the Authorization header on every outbound tool call (Pattern B)"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/get-hr-context": {
+      "post": {
+        "operationId": "get_hr_context",
+        "summary": "Get HR context for the current user",
+        "description": "Receives the five WxO context variables passed by the LLM from the agent instructions and returns a validated HR context summary. Call this whenever the user asks about their HR profile, context, or identity.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "clientID": {
+                    "type": "string",
+                    "description": "Client identifier from WxO context — pass exactly as received in instructions"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "User display name from WxO context — pass exactly as received in instructions"
+                  },
+                  "role": {
+                    "type": "string",
+                    "description": "User role from WxO context — pass exactly as received in instructions"
+                  },
+                  "user_name": {
+                    "type": "string",
+                    "description": "Username / login from WxO context — pass exactly as received in instructions"
+                  },
+                  "email_id": {
+                    "type": "string",
+                    "description": "Email address from WxO context — pass exactly as received in instructions"
+                  }
+                },
+                "required": ["clientID", "name", "role", "user_name", "email_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "HR context validation result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "success if all 5 context variables were received, partial otherwise",
+                      "enum": ["success", "partial"]
+                    },
+                    "context_variables_received": {
+                      "type": "object",
+                      "description": "The five context variables as received by the server",
+                      "properties": {
+                        "clientID":  { "type": "string" },
+                        "name":      { "type": "string" },
+                        "role":      { "type": "string" },
+                        "user_name": { "type": "string" },
+                        "email_id":  { "type": "string" }
+                      }
+                    },
+                    "validation": {
+                      "type": "object",
+                      "properties": {
+                        "all_context_variables_present": {
+                          "type": "boolean",
+                          "description": "True if all five variables arrived non-empty"
+                        },
+                        "missing": {
+                          "type": "array",
+                          "items": { "type": "string" },
+                          "description": "Names of any context variables that were missing or empty"
+                        }
+                      }
+                    },
+                    "hr_summary": {
+                      "type": "string",
+                      "description": "Human-readable HR profile summary built from the context variables"
+                    },
+                    "bearer_identity": {
+                      "type": "object",
+                      "description": "Identity extracted from the Authorization header JWT (Pattern B)",
+                      "properties": {
+                        "token_found":    { "type": "boolean" },
+                        "username":       { "type": "string" },
+                        "token_preview":  { "type": "string" }
+                      }
+                    },
+                    "pattern": {
+                      "type": "string",
+                      "description": "Which context-passing patterns were detected"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

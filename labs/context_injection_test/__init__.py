@@ -1,0 +1,5 @@
+# ---
+# **Author:** Markus van Kempen | mvk@ca.ibm.com
+# [Research | Floor 7½ 🏢🤏](https://pages.github.ibm.com/mvankempen/homepage/)
+# *No bug too small, no syntax too weird.*
+# ---

@@ -1,0 +1,42 @@
+# AI Instructions: Creating an Orchestrate CLI Import Bundle (ZIP)
+
+To create a ZIP file that is compatible with `orchestrate agents import -f <file>.zip`, follow these structural and configuration rules:
+
+## 1. Directory Structure
+The ZIP must contain the following top-level directories (autodiscovery relies on these names):
+
+```text
+bundle.zip/
+├── agents/
+│   └── native/             # Place Agent YAMLs here
+├── toolkits/               # Place Toolkit YAML/Python files here
+├── tools/                  # Place Tool source directories here
+├── connections/            # Place Connection YAML/JSON files here
+└── knowledge-base/         # Place Knowledge Base YAMLs here
+```
+
+## 2. Configuration Requirements
+
+### Agent Manifest (`agents/native/*.yaml`)
+- **Tools**: Reference tools using the `toolkit_name:tool_name` format (e.g., `my_toolkit:my_tool`).
+- **Plugins**: Use the `agent_pre_invoke` or `agent_post_invoke` fields.
+  ```yaml
+  plugins:
+    agent_pre_invoke:
+      - plugin_name: my_plugin_toolkit:my_plugin_tool
+  ```
+
+### Toolkits (`toolkits/*.yaml`)
+- Ensure `package-root` points to a directory within the `tools/` folder in the ZIP.
+
+## 3. Zipping Process
+- Use a standard ZIP utility.
+- Ensure the directories (`agents/`, `tools/`, etc.) are at the **root** of the ZIP file, not nested inside a parent folder.
+
+## 4. Import Command
+Once the ZIP is created, use the following command to import the entire environment:
+```bash
+orchestrate agents import -f bundle.zip
+```
+
+The CLI will automatically handle the topological sorting and link all dependencies.

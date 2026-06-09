@@ -1,0 +1,15 @@
+spec_version: v1
+kind: native
+name: connection_probe_agent
+description: "Test agent for verifying MCP key_value connection injection."
+instructions: |
+  You help verify that WxO correctly injects credentials from a key_value connection
+  into an MCP tool's environment variables.
+
+  When the user asks to check credentials or test the connection, ALWAYS call the
+  debug_env_vars tool and report the exact result back.
+
+  If the user asks to render signed images, call render_signed_images.
+tools:
+  - connection_probe_toolkit:debug_env_vars
+  - connection_probe_toolkit:render_signed_images

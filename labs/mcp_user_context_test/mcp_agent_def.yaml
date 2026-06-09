@@ -1,0 +1,9 @@
+spec_version: v1
+kind: native
+name: mcp_auth_tester_agent
+title: "MCP Identity Tester"
+nickname: "mcp_identity"
+description: "An agent that tests extracting credentials from SSE Headers"
+instructions: "You are a helpful assistant. You have access to the 'get_session_identity' tool. If the user asks you to check headers, invoke it."
+tools:
+  - get_session_identity

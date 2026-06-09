@@ -1,0 +1,8 @@
+spec_version: v1
+kind: native
+name: rbac_tester_agent
+title: RBAC Test Agent
+description: Agent to test the RBAC pre-invoke plugin.
+plugins:
+  agent_pre_invoke:
+    - plugin_name: RBAC_plugin

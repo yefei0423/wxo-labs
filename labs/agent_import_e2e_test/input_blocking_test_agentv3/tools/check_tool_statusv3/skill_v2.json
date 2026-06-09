@@ -1,0 +1,35 @@
+{
+  "description": "Check the current status of any running tools",
+  "created_by": "643007PPX7",
+  "tags": null,
+  "name": "check_tool_statusv3",
+  "permission": "read_only",
+  "input_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "output_schema": {
+    "type": "string",
+    "description": "Status message with tool information"
+  },
+  "binding": {
+    "python": {
+      "function": "long_running_toolv3:check_tool_statusv3",
+      "requirements": [
+        "# Python dependencies for Input Blocking Plugin Test",
+        "# Author: Markus van Kempen | mvk@ca.ibm.com",
+        "",
+        "# WXO SDK (required for tools and plugins)"
+      ]
+    }
+  },
+  "display_name": "check_tool_statusv3",
+  "toolkit_id": null,
+  "is_async": false,
+  "response_format": "content",
+  "restrictions": "editable",
+  "bundled_agent_id": null,
+  "workspace_id": "00000000-0000-0000-0000-000000000001",
+  "hidden": false
+}

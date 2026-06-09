@@ -1,0 +1,79 @@
+/tools/flows/overview#edges# OpenAPI spec for WxO Asynchronous Background Job Tool (Callback Pattern)
+# Author:  Markus van Kempen
+# Email:   mvankempen@ca.ibm.com / markus.van.kempen@gmail.com
+# Date:    2026-03-04
+openapi: 3.0.0
+info:
+  title: Asynchronous Background Job Tool
+  version: 1.0.0
+  description: A test tool that demonstrates how to run long background jobs asynchronously using the callbackUrl pattern in Watson Orchestrate.
+  contact:
+    name: Markus van Kempen
+    email: mvankempen@ca.ibm.com
+servers:
+  - url: https://your-ngrok-url.ngrok-free.app
+    description: Replace with your public ngrok or localtunnel URL
+paths:
+  /long-task:
+    post:
+      operationId: startBackgroundJob
+      summary: Starts a long background job
+      description: >
+        This tool simulates a long running process. It returns 202 Accepted immediately, and then hits the callbackUrl when finished.
+        CRITICAL INSTRUCTION TO AGENT: When the callback is received, output the data back to the user to let them know the job is officially completed.
+      parameters:
+        - name: callbackUrl
+          in: header
+          required: true
+          description: WxO automatically populates this with the webhook URI. Do not map this manually.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                job_name:
+                  type: string
+                  description: The name or description of the background job to execute.
+                duration:
+                  type: integer
+                  description: The amount of time in seconds to simulate running the job.
+                  default: 10
+      responses:
+        '202':
+          description: Accepted. The tool has started processing and will notify the agent when done.
+      callbacks:
+        onJobComplete:
+          '{$request.header.callbackUrl}':
+            post:
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        status:
+                          type: string
+                          description: Status of the job.
+                        message:
+                          type: string
+                          description: Details or results of the job.
+                        job_id:
+                          type: string
+                          description: Hexadecimal UUID fragment of the simulated job.
+                        records_processed:
+                          type: integer
+                          description: The number of mock records processed.
+                        started_at:
+                          type: string
+                        completed_at:
+                          type: string
+                        time_taken:
+                          type: string
+                          description: How long it actually took.
+              responses:
+                '200':
+                  description: Callback received successfully by Orchestrate.
