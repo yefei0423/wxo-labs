@@ -151,7 +151,8 @@ A Python tool that generates personalized greetings and an agent that uses this 
 Create a file named `greetings.py`:
 
 ```python
-from ibm_watsonx_orchestrate import tool
+#from ibm_watsonx_orchestrate import tool
+from ibm_watsonx_orchestrate.agent_builder.tools import tool
 
 @tool
 def greet_user(name: str) -> str:
