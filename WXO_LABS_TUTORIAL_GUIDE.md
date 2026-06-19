@@ -191,6 +191,7 @@ orchestrate tools list | grep greet_user
 Create `hello_world_agent.yaml`:
 
 ```yaml
+spec_version: v1
 name: hello_world_greeter
 title: Hello World Greeter
 description: A friendly agent that greets users
