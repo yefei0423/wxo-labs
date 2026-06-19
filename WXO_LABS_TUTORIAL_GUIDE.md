@@ -420,6 +420,7 @@ orchestrate tools import -k python -f file_processor.py -r requirements.txt
 
 orchestrate agents create -n "hr_data_analyst" \
   --title "HR Data Analyst" \
+  --description "Analyzes workforce metrics and trends from uploaded files." \
   --instructions "Analyze employee data from uploaded Excel files" \
   --tools analyze_employee_data
 ```
