@@ -263,7 +263,8 @@ A tool with smart defaults that improve user experience by reducing manual data 
 Create `financial_tool.py`:
 
 ```python
-from ibm_watsonx_orchestrate import tool
+#from ibm_watsonx_orchestrate import tool
+from ibm_watsonx_orchestrate.agent_builder.tools import tool
 from pydantic import BaseModel, Field
 
 class FinancialApprovalInput(BaseModel):
@@ -308,6 +309,7 @@ orchestrate tools import -k python -f financial_tool.py -r requirements.txt
 # Create agent
 orchestrate agents create -n "finance_assistant" \
   --title "Finance Assistant" \
+  --description "An agent that handles employee financial approval workflows and requests." \
   --instructions "Help users submit financial approval requests" \
   --tools request_financial_approval
 
